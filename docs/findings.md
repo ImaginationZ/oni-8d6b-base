@@ -84,11 +84,39 @@ Parsed with `tools/blueprint_rooms.py` (2026-11-14) and checked against the base
 - 2 manual generators back-feeding the grid through a transformer, a medical cot, a massage table and an apothecary.
 - 8 `SuitLocker` (an earlier count said about 9), one `SuitFabricator`, and 1 transit-tube entrance.
 
-## 5b. The semi-open version (Yuque "混合半开放基地", `references/napobi_yuque_semi_open/`)
-- **Dupes sleep in two rocket habitats**, not in the base. The room list in `26.jpg` shows "1号宿舍 / 2号宿舍" as rockets on the planetoid. Flow `10.jpg`: ① pass the reserve on the way to bed → ② take suits off inside the door → ③ sleep in the habitat → ④ get up and suit up → ⑤ washroom → ⑥ food → ⑦ eat → ⑧ recreation → ⑨ pass the reserve again → ⑩ tube or fire pole to work.
-- Docks and checkpoint sit in a "气压服存放柜走廊" (suit-dock corridor) leading to the habitat hatches (`25.jpg`).
-- The **nature reserve is the central shaft** (fire pole + tube access, 4 wild cacti on natural tiles, 114 tiles). Every dupe passes it going to work and coming back, for +6 morale ("小人上下班都经过一次").
-- So **neither reference fits 8 comfy beds into a semi-open base**: 大叔 uses cots in a rocket, and 拿个破笔水's semi-open uses rocket habitats. The owner has ruled out rocket beds, so this part of v3 is ours to design. The closed blueprint's entrance layout (reserve + docks in front of the beds) is the closest model.
+## 5b. 拿个破笔水's semi-open base: the primary reference (`references/napobi_semi_open_save_blueprint/`)
+Sources: the author's own download (two `.blueprint` files + sandbox `.sav`), parsed with `tools/blueprint_rooms.py` on 2026-11-14 and checked against the semi-open Yuque images (`references/napobi_yuque_semi_open/` 04 overview, 10 dupe flow, 11 bionic flow, 25 zones, 26 room overlay, 27 and 30 dock corridor). Coordinates: x 0–44 left to right, y 0–26 bottom to top.
+
+**Overall: 45 × 27, two blocks around a central shaft.**
+- **Left block (x0–20), mixed living.** Kitchen at the bottom → washroom → banquet hall on the left → rec room on top (wind tunnel, surfboard, arcade, beach chair) → massage room in the top-left corner. High-pressure O₂ room in the middle; lube station room beside it.
+- **Central shaft (x21–23): the nature reserve.** Fire pole, ladder and transit tube side by side, wild cacti on natural tiles, park sign, 114 tiles. It runs the full height and exits top and bottom through horizontal doors, so it is also the up/down route to work ("小人上下班都经过一次 获得+6士气加成").
+- **Right block (x24–44), utilities.** Steam-turbine cooling, hydrogen generators and power at the top, a sewage/manual-generator gym, the **suit-dock corridor**, then a misc room (suit fabricator, medical cot, apothecary) and the electrobank chargers at the bottom.
+
+**Bedroom = 2 Spacefarer Modules in the dock corridor.**
+- The corridor (x25–43, y7–10, 4 tall) runs: door from the shaft (x24, *dupes both ways, bionics no entry*) → checkpoint (`SuitMarker` x25, flipped, arrow pointing left/out to the shaft) → **8 docks** (x26–33) → **two habitat modules side by side** (x34–43, 5 × 4 each).
+- **Images 27 and 30** show the modules standing straight on the corridor floor, hatches facing the corridor. There's no launch pad, engine or nosecone visible. Rocket parts aren't stored in blueprints, so the main `.blueprint` just leaves the space empty.
+- **Interior** (`napobi_8d6b_semi_open_spacefarer_module.blueprint`, 10 × 8): 4 `LuxuryBed`, two rows of 2. Rows are 2 tall, with floors of metal, carpet and airflow tiles. A ladder column at x1 runs the full height. There's a gas vent (O₂ in), an element sensor + timer + buffer driving it, and a locked pressure door at the hatch row.
+- The interior is one room of about 50 tiles. The ladder column is 7 tall, so the wiki's ceiling rule (one column of 4 or more) and size rule (12–64) for Luxury Barracks are met. Decor items and whether room bonuses apply inside a rocket interior are *unverified*.
+- **Why it's compact.** All 8 beds plus their airlock take 19 × 4 = 76 tiles on the map. The interiors are off-map and automatically suit-free, so there's no bedroom atmosphere to manage. The closed base needed 12 × 8 for beds alone; our two 16-wide wings needed 32 × 4 plus an airlock.
+- **Open question: how the modules get there without a launch pad.** The save is a sandbox ("沙盒" in the HUD of `26.jpg`), and the howto mentions instant build. Normally rocket modules are built on a Rocket Platform with an engine underneath. Neither the doc text nor the video comments explain it. The video's captions are burned in, and this machine has no ffmpeg to read them. **This must be checked before relying on the trick**: in the video BV1R5zsB4Emw, in-game, or by asking the author.
+
+**Dupe flow** (`10.jpg`; 4 shifts × 2, sleep first then rest):
+① come down or up the shaft (nature reserve) → ② through the bionic-proof door into the dock corridor, suit off → ③ sleep in a habitat → ④ suit on, back to the shaft → ⑤ washroom (enter from the shaft via door x20 y8, one way, right to left for everyone) → ⑥ pick up food at the fridge window from the kitchen below → ⑦ banquet hall (communal table, phone, soda fountain; one-way door x5) → ⑧ up to the rec room → ⑨ back into the shaft → ⑩ tube (top) or fire pole (bottom) to work.
+
+**Bionic flow** (`11.jpg`; **3 shifts × 2**, no sleep):
+① enter via the shaft → ② the **same washroom**, which has 2 gunk extractors beside the 2 lavatories and 2 sinks, one way right to left → ③ power banks + O₂ near the banquet hall and lube room → ④ rec room → ⑤ shaft → ⑥ out.
+- **There is no separate bionic zone here**, unlike the closed base. Both kinds share the left block on the same one-way loop. The only bionic ban is the dock corridor (so bionics never take their suits off). The base is semi-open, so everyone else is suited anyway.
+- Chargers: 4 for 6 bionics, with robo-arms feeding them. The author's rule (`30.jpg`) is bionics ÷ 2 + 1, the +1 because swaps aren't seamless.
+
+**Door access in this blueprint:**
+- Every one-way door is "go left" for `Minion`, `BionicMinion` and `Robot` (x5 y7, x6 y12/14, x17 y18, x20 y8, and the locked pressure door x13 y21).
+- x24 y8 (into the dock corridor) is dupes only.
+- x35 y3 lets bionics go left only.
+
+**Compared with our decisions:**
+- *Docks:* they use 8. 大叔 uses 5, and the reasoning in requirements (2026-11-14) still says about 5 is enough.
+- *Comfy beds and rockets:* the habitats hold proper comfy beds (`LuxuryBed`), so the 2026-11-13 comfy-bed requirement is met. The owner relaxed "no rocket beds" on 2026-11-14 if it saves space or suits the design. It clearly saves space, if the build question above has a good answer.
+- *Sinks:* they have 2 real sinks in the washroom, which matches our "sinks, not shine bugs" decision.
 
 ## 6. Checkpoint orientation (wiki, verified)
 "A checkpoint must have an atmo suit dock built on the opposite side its arrow faces." The arrow points to the dirty or suited side, and **docks go on the clean side**. Our v1 and v2 got this backwards.

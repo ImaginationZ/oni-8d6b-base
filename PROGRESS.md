@@ -12,7 +12,11 @@ The blueprint is parsed and the findings are written (§5, §5b, §7). The v3 de
 - [x] Downloaded and watched both videos in full (every caption read); design logic written up in `docs/findings.md`.
 - [x] Fetched 拿个破笔水's two Yuque docs (85 + 30 images), not yet reviewed image by image.
 - [x] Got 拿个破笔水's `.blueprint` and save (from the owner's download).
+- [x] Parsed both of 拿个破笔水's blueprints: the closed base (§5) and the semi-open base + habitat interior (§5b).
 - [x] Moved the project to the owner's remote dev machine.
+
+## New primary reference (2026-11-14)
+拿个破笔水's semi-open download is parsed (findings §5b). Their bedroom is 2 Spacefarer Modules (4 comfy beds each) at the end of a dock corridor: 8 beds + airlock in 19 × 4 on the map. **To verify before using it:** how the modules stand without a launch pad (their save is a sandbox), and whether bedroom room bonuses apply inside a rocket.
 
 ## Pending decision (asked 2026-11-14)
 **Where the bedroom airlock goes in the semi-open design.** What 拿个破笔水's files show (findings §5, §5b):
