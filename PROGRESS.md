@@ -23,7 +23,7 @@ Research is done; the v3 design hasn't started. One decision is pending with the
 Recommended: A if docks aren't industrial, otherwise B. **Also check how 拿个破笔水's blueprint solves this.** It has 8 `LuxuryBed` and about 9 `SuitLocker` in 31 × 33, so it already fits proper beds and docks compactly.
 
 ## Next
-1. Parse `references/napobi_save_blueprint/napobi_8p6.blueprint` properly: per-room building lists, where the beds, docks and checkpoints sit, and the flow. Review the semi-open Yuque images (`references/napobi_yuque_semi_open/`, especially 10, 11, 25–37).
+1. Parse `references/napobi_save_blueprint/napobi_8d6b.blueprint` properly: per-room building lists, where the beds, docks and checkpoints sit, and the flow. Review the semi-open Yuque images (`references/napobi_yuque_semi_open/`, especially 10, 11, 25–37).
 2. Agree the v3 plan with the owner: dupe loop (downward via the fire pole: beds → washroom → food → banquet → recreation → nature reserve with printing pod → exit), one-way bionic wing, door permissions, the semi-open bedroom airlock, up/down access and tube room.
 3. Build v3 with `tools/gen2.py` as a starting point (it validates overlaps, rooms and floors), render the page, publish or serve it, and update this file.
 

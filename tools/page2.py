@@ -1,7 +1,7 @@
 import json, html, sys
 D = sys.argv[1]
 L = json.load(open(f'{D}/layout_v2.json'))
-BNI = open(f'{D}/base_8p6_v2_bni.json').read()
+BNI = open(f'{D}/base_8d6b_v2_bni.json').read()
 items = L['items']
 
 C = 15  # px per tile

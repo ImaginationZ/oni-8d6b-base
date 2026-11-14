@@ -49,7 +49,7 @@ Sources: both videos, watched in full (every caption line read from burned-in su
 - **Food logistics:** cook upstairs, drop food down to the banquet hall's cold storage. The conveyor carries finished dishes only, never raw ingredients, eggshells, polluted dirt or rot. Power banks go round a conveyor loop to the chargers.
 - **Germs:** both bases skip sinks and use 2 shine bugs or depleted-uranium tiles to sterilise. **The owner rejected this; we use sinks.**
 
-## 5. 拿个破笔水's actual blueprint (`references/napobi_save_blueprint/napobi_8p6.blueprint`)
+## 5. 拿个破笔水's actual blueprint (`references/napobi_save_blueprint/napobi_8d6b.blueprint`)
 - 31 × 33 tiles, 1661 entries (Blueprints-mod JSON, `blueprintVersion` 3). There's an ASCII render in `napobi_ascii.txt` (rough: logic parts are drawn too).
 - Notable building IDs it confirms exist in-game:
   - Bionic: `GunkEmptier`, `OilChanger`, `ElectrobankCharger`

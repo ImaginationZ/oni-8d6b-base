@@ -211,6 +211,6 @@ for it in items:
     e = {'id': it['id'], 'position': {'x': ax, 'y': ay}}
     if it['orient']: e['orientation'] = it['orient']
     bni['blueprintItems'].append(e)
-json.dump({'friendlyname': '8+6 Mixed Base (8 dupes + 6 bionics)', **bni}, open(f'{OUT}/base_8p6_bni.json', 'w'), indent=1)
+json.dump({'friendlyname': '8+6 Mixed Base (8 dupes + 6 bionics)', **bni}, open(f'{OUT}/base_8d6b_bni.json', 'w'), indent=1)
 json.dump({'items': items, 'rooms': rooms}, open(f'{OUT}/layout.json', 'w'))
 print('items', len(items), collections.Counter(i['id'] for i in items).most_common(12))

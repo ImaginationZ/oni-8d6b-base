@@ -22,6 +22,6 @@ Read these before doing anything:
 - `docs/`: requirements, findings, lessons.
 
 ## Git
-- Public repo: https://github.com/ImaginationZ/oni-8p6-base (branch `main`). Commit each meaningful step (docs, decisions, designs) and push.
+- Public repo: https://github.com/ImaginationZ/oni-8d6b-base (branch `main`). Commit each meaningful step (docs, decisions, designs) and push.
 - **Before every push**, scan what's tracked for credentials and private data: tokens and keys, emails other than noreply, IP addresses, home paths, machine names.
 - **Never commit third-party material:** videos, screenshots, Yuque doc text, other people's blueprints or saves. It stays under the gitignored `references/`, and the docs link to the sources. Short quotes in docs are fine.
