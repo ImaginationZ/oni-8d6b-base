@@ -16,7 +16,7 @@ The blueprint is parsed and the findings are written (§5, §5b, §7). The v3 de
 - [x] Moved the project to the owner's remote dev machine.
 
 ## New primary reference (2026-11-14)
-拿个破笔水's semi-open download is parsed (findings §5b). Their bedroom is 2 Spacefarer Modules (4 comfy beds each) at the end of a dock corridor: 8 beds + airlock in 19 × 4 on the map. **To verify before using it:** how the modules stand without a launch pad (their save is a sandbox), and whether bedroom room bonuses apply inside a rocket.
+拿个破笔水's semi-open download is parsed (findings §5b). Their bedroom is 2 Spacefarer Modules (4 comfy beds each) at the end of a dock corridor: 8 beds + airlock in 19 × 4 on the map. The owner confirmed (2026-11-14) that a Spacefarer Module can be built without a launch pad. Still to check: whether bedroom bonuses apply inside, and how O₂ is fed in.
 
 ## Pending decision (asked 2026-11-14)
 **Where the bedroom airlock goes in the semi-open design.** What 拿个破笔水's files show (findings §5, §5b):
