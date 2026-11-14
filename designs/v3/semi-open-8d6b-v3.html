@@ -94,6 +94,8 @@ button:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid va
 .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
 a{color:var(--accent)}
 code{font-family:var(--mono);font-size:.92em}
+.nat{fill:var(--nat)}
+:root{--nat:#8a6a3f}
 </style>
 
 
@@ -894,6 +896,10 @@ code{font-family:var(--mono);font-size:.92em}
 <rect class="r-pow" x="795" y="105" width="15" height="15"/>
 <rect class="r-pow" x="795" y="90" width="15" height="15"/>
 <rect class="r-pow" x="795" y="75" width="15" height="15"/>
+<rect class="nat" x="360" y="120" width="15" height="15"/>
+<rect class="nat" x="360" y="60" width="15" height="15"/>
+<rect class="nat" x="375" y="120" width="15" height="15"/>
+<rect class="nat" x="375" y="60" width="15" height="15"/>
 <rect class="ins" x="135" y="435" width="15" height="15"/>
 <rect class="ins" x="810" y="435" width="15" height="15"/>
 <rect class="ins" x="135" y="420" width="15" height="15"/>
@@ -975,9 +981,7 @@ code{font-family:var(--mono);font-size:.92em}
 <rect class="ins" x="345" y="435" width="15" height="15"/>
 <rect class="ins" x="345" y="60" width="15" height="15"/>
 <rect class="ins" x="360" y="435" width="15" height="15"/>
-<rect class="ins" x="360" y="60" width="15" height="15"/>
 <rect class="ins" x="375" y="435" width="15" height="15"/>
-<rect class="ins" x="375" y="60" width="15" height="15"/>
 <rect class="ins" x="390" y="435" width="15" height="15"/>
 <rect class="ins" x="390" y="60" width="15" height="15"/>
 <rect class="ins" x="405" y="435" width="15" height="15"/>
@@ -1110,8 +1114,6 @@ code{font-family:var(--mono);font-size:.92em}
 <rect class="tile" x="315" y="120" width="15" height="15"/>
 <rect class="tile" x="330" y="120" width="15" height="15"/>
 <rect class="tile" x="345" y="120" width="15" height="15"/>
-<rect class="tile" x="360" y="120" width="15" height="15"/>
-<rect class="tile" x="375" y="120" width="15" height="15"/>
 <rect class="tile" x="390" y="120" width="15" height="15"/>
 <rect class="tile" x="405" y="120" width="15" height="15"/>
 <rect class="tile" x="420" y="120" width="15" height="15"/>
@@ -1542,14 +1544,14 @@ code{font-family:var(--mono);font-size:.92em}
 <text class="lbl" x="262.5" y="105.0" font-size="9">St</text></g>
 <g><title>Light (CeilingLight, 1×1)</title><rect class="b-deco" x="286" y="76" width="13" height="13" rx="2"/>
 <text class="lbl" x="292.5" y="82.5" font-size="9">·</text></g>
-<g><title>Wild plant in pot (FlowerVase, 1×1)</title><rect class="b-deco" x="361" y="106" width="13" height="13" rx="2"/>
-<text class="lbl" x="367.5" y="112.5" font-size="9">✿</text></g>
-<g><title>Wild plant in pot (FlowerVase, 1×1)</title><rect class="b-deco" x="376" y="106" width="13" height="13" rx="2"/>
-<text class="lbl" x="382.5" y="112.5" font-size="9">✿</text></g>
-<g><title>Hanging wild plant (FlowerVaseHangingFancy, 1×2)</title><rect class="b-deco" x="361" y="76" width="13" height="28" rx="2"/>
-<text class="lbl" x="367.5" y="90.0" font-size="9">✿</text></g>
-<g><title>Hanging wild plant (FlowerVaseHangingFancy, 1×2)</title><rect class="b-deco" x="376" y="76" width="13" height="28" rx="2"/>
-<text class="lbl" x="382.5" y="90.0" font-size="9">✿</text></g>
+<g><title>Wild plant on a natural tile (not a pot) (WildPlant, 1×1)</title><rect class="b-deco" x="361" y="106" width="13" height="13" rx="2"/>
+<text class="lbl" x="367.5" y="112.5" font-size="9">❀</text></g>
+<g><title>Wild plant on a natural tile (not a pot) (WildPlant, 1×1)</title><rect class="b-deco" x="376" y="106" width="13" height="13" rx="2"/>
+<text class="lbl" x="382.5" y="112.5" font-size="9">❀</text></g>
+<g><title>Hanging wild plant from a natural tile (WildPlantHanging, 1×2)</title><rect class="b-deco" x="361" y="76" width="13" height="28" rx="2"/>
+<text class="lbl" x="367.5" y="90.0" font-size="9">❀</text></g>
+<g><title>Hanging wild plant from a natural tile (WildPlantHanging, 1×2)</title><rect class="b-deco" x="376" y="76" width="13" height="28" rx="2"/>
+<text class="lbl" x="382.5" y="90.0" font-size="9">❀</text></g>
 <g><title>Park Sign (ParkSign, 1×2)</title><rect class="b-deco" x="391" y="91" width="13" height="28" rx="2"/>
 <text class="lbl" x="397.5" y="105.0" font-size="9">P</text></g>
 <g><title>Transit tube station (tube leaves through the roof, then left and right) (TravelTubeEntrance, 3×2)</title><rect class="b-suit" x="406" y="91" width="43" height="28" rx="2"/>
@@ -1664,6 +1666,7 @@ code{font-family:var(--mono);font-size:.92em}
   <div class="legend">
     <span><i class="sw" style="background:var(--tile)"></i>tile</span>
     <span><i class="sw" style="background:var(--ins)"></i>insulated tile</span>
+    <span><i class="sw" style="background:var(--nat)"></i>natural tile (wild plants)</span>
     <span><i class="sw" style="background:var(--door)"></i>door</span>
     <span><i class="sw" style="background:var(--pdoor)"></i>mechanized airlock</span>
     <span><i class="sw" style="background:var(--pole)"></i>fire pole</span>
@@ -1681,7 +1684,7 @@ code{font-family:var(--mono);font-size:.92em}
     <ol>
       <li>Shaft (nature reserve, +6 morale).</li>
       <li>Into the bedroom corridor (R2): the checkpoint takes the suit; 5 docks hold the sleepers' suits.</li>
-      <li>Sleep in a habitat (4 comfy beds each).</li>
+      <li>Sleep in a habitat (4 comfy beds each; the bedroom bonus applies inside, confirmed in game).</li>
       <li>Suit back on, back to the shaft.</li>
       <li>Washroom (L2) across the shaft, one way right to left: lavatory, then sink.</li>
       <li>Meal from the fridge window by the banquet door; the kitchen below feeds it by conveyor.</li>
@@ -1724,7 +1727,7 @@ code{font-family:var(--mono);font-size:.92em}
   <p>Sizes come from the generator's flood fill (sealed rooms, tile counts). Room-type limits are from the wiki.</p>
   <div class="sheet tbl"><table>
     <thead><tr><th>Room</th><th>Tiles</th><th>Contents</th></tr></thead>
-    <tbody><tr><td>Nature Reserve (shaft + landing)</td><td class="n">93</td><td>✿ ×2, ✿ ×2, P, Tube</td></tr>
+    <tbody><tr><td>Nature Reserve (shaft + landing)</td><td class="n">93</td><td>❀ ×2, ❀ ×2, P, Tube</td></tr>
 <tr><td>Food store (deep-frozen)</td><td class="n">18</td><td>Fr ×4, St ×2</td></tr>
 <tr><td>Kitchen (deep-frozen)</td><td class="n">39</td><td>In, Mush, Range, Grill, Spice, Ld</td></tr>
 <tr><td>Washroom (shared)</td><td class="n">36</td><td>Sink, Lav ×2, Gunk ×2</td></tr>
@@ -1768,7 +1771,8 @@ code{font-family:var(--mono);font-size:.92em}
       <tr><td>Suit docks</td><td>8</td><td>5: only the 2 sleepers' suits are ever docked</td></tr>
       <tr><td>Central shaft</td><td>Nature reserve with fire pole, ladder and tube</td><td>Same, but 2 ladders + fire pole so both sides' doors sit next to a ladder; the tube station is on a reserve landing at the top and the tube runs along the roof, left and right</td></tr>
       <tr><td>Washroom</td><td>2 lavatories, 2 sinks, 2 gunk extractors</td><td>2 lavatories, 1 sink, 2 gunk extractors (the room is 12 wide)</td></tr>
-      <tr><td>Kitchen and banquet hall</td><td>Vacuum-frozen food storage</td><td>Kitchen, food store and banquet hall deep-frozen (owner's decision, after 大叔)</td></tr>
+      <tr><td>Kitchen and banquet hall</td><td>Vacuum-frozen food storage</td><td>Kitchen, food store and banquet hall deep-frozen (owner's decision, after 大叔; a frozen banquet hall still counts, confirmed in game)</td></tr>
+      <tr><td>Nature reserve plants</td><td>4 cacti on natural tiles</td><td>Same idea: 4 wild plants on natural tiles at the top landing (pots don't count)</td></tr>
       <tr><td>Printing pod</td><td>Living area</td><td>Bionic room (L3), the only 4-tall room on the left</td></tr>
       <tr><td>Size</td><td>45 × 27</td><td>46 × 26</td></tr>
     </tbody>
@@ -1778,10 +1782,9 @@ code{font-family:var(--mono);font-size:.92em}
 <section class="check">
   <h2>Check in game before you commit</h2>
   <ul>
-    <li><b>Habitat bonuses:</b> does the bedroom count as Luxury Barracks inside a Spacefarer Module? Hover the interior.</li>
     <li><b>O₂ into the habitats:</b> route not drawn yet (their interior has a gas vent fed from outside).</li>
     <li><b>Clear space above a module:</b> the gym sits right on top, as in 拿个破笔水's base.</li>
-    <li><b>Wild plants in pots</b> counting for the nature reserve, and a <b>frozen banquet hall</b> keeping its decor and recreation requirements.</li>
+    <li><b>Wild plants:</b> pots don't count, so the reserve needs 4 plants growing on natural tiles (2 on the landing floor, 2 hanging from the roof). Keep or create those natural tiles when building; they aren't in the blueprint JSON.</li>
     <li><b>Crossing the shaft:</b> dupes step between the ladders and the pole sideways; doors sit next to ladders so nobody relies on it to get in or out.</li>
     <li><b>BNI import is untested.</b> <code>HabitatModuleMedium</code> (Spacefarer Module) is a guessed ID and isn't in BNI's database.</li>
   </ul>
@@ -2371,22 +2374,8 @@ code{font-family:var(--mono);font-size:.92em}
   {
    &quot;id&quot;: &quot;InsulationTile&quot;,
    &quot;position&quot;: {
-    &quot;x&quot;: 15,
-    &quot;y&quot;: 25
-   }
-  },
-  {
-   &quot;id&quot;: &quot;InsulationTile&quot;,
-   &quot;position&quot;: {
     &quot;x&quot;: 16,
     &quot;y&quot;: 0
-   }
-  },
-  {
-   &quot;id&quot;: &quot;InsulationTile&quot;,
-   &quot;position&quot;: {
-    &quot;x&quot;: 16,
-    &quot;y&quot;: 25
    }
   },
   {
@@ -3326,20 +3315,6 @@ code{font-family:var(--mono);font-size:.92em}
    &quot;id&quot;: &quot;Tile&quot;,
    &quot;position&quot;: {
     &quot;x&quot;: 14,
-    &quot;y&quot;: 21
-   }
-  },
-  {
-   &quot;id&quot;: &quot;Tile&quot;,
-   &quot;position&quot;: {
-    &quot;x&quot;: 15,
-    &quot;y&quot;: 21
-   }
-  },
-  {
-   &quot;id&quot;: &quot;Tile&quot;,
-   &quot;position&quot;: {
-    &quot;x&quot;: 16,
     &quot;y&quot;: 21
    }
   },
@@ -5472,34 +5447,6 @@ code{font-family:var(--mono);font-size:.92em}
    &quot;position&quot;: {
     &quot;x&quot;: 14,
     &quot;y&quot;: 24
-   }
-  },
-  {
-   &quot;id&quot;: &quot;FlowerVase&quot;,
-   &quot;position&quot;: {
-    &quot;x&quot;: 15,
-    &quot;y&quot;: 22
-   }
-  },
-  {
-   &quot;id&quot;: &quot;FlowerVase&quot;,
-   &quot;position&quot;: {
-    &quot;x&quot;: 16,
-    &quot;y&quot;: 22
-   }
-  },
-  {
-   &quot;id&quot;: &quot;FlowerVaseHangingFancy&quot;,
-   &quot;position&quot;: {
-    &quot;x&quot;: 15,
-    &quot;y&quot;: 23
-   }
-  },
-  {
-   &quot;id&quot;: &quot;FlowerVaseHangingFancy&quot;,
-   &quot;position&quot;: {
-    &quot;x&quot;: 16,
-    &quot;y&quot;: 23
    }
   },
   {

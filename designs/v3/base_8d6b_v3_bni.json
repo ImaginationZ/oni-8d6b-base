@@ -578,22 +578,8 @@
   {
    "id": "InsulationTile",
    "position": {
-    "x": 15,
-    "y": 25
-   }
-  },
-  {
-   "id": "InsulationTile",
-   "position": {
     "x": 16,
     "y": 0
-   }
-  },
-  {
-   "id": "InsulationTile",
-   "position": {
-    "x": 16,
-    "y": 25
    }
   },
   {
@@ -1533,20 +1519,6 @@
    "id": "Tile",
    "position": {
     "x": 14,
-    "y": 21
-   }
-  },
-  {
-   "id": "Tile",
-   "position": {
-    "x": 15,
-    "y": 21
-   }
-  },
-  {
-   "id": "Tile",
-   "position": {
-    "x": 16,
     "y": 21
    }
   },
@@ -3679,34 +3651,6 @@
    "position": {
     "x": 14,
     "y": 24
-   }
-  },
-  {
-   "id": "FlowerVase",
-   "position": {
-    "x": 15,
-    "y": 22
-   }
-  },
-  {
-   "id": "FlowerVase",
-   "position": {
-    "x": 16,
-    "y": 22
-   }
-  },
-  {
-   "id": "FlowerVaseHangingFancy",
-   "position": {
-    "x": 15,
-    "y": 23
-   }
-  },
-  {
-   "id": "FlowerVaseHangingFancy",
-   "position": {
-    "x": 16,
-    "y": 23
    }
   },
   {

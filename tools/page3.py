@@ -22,8 +22,8 @@ AB = {'LuxuryBed':'Comfy Bed','FlushToilet':'Lav','WashSink':'Sink','GunkEmptier
  'GasPump':'Pump','WaterPurifier':'Sieve','LiquidConditioner':'AqT','LiquidReservoir':'Res','SuitFabricator':'Suit Forge',
  'ManualGenerator':'Gym','PowerTransformer':'Xfmr','MedicalCot':'Cot','Apothecary':'Apoth','ParkSign':'P',
  'MetalSculpture':'Sc','CanvasTall':'Art','ItemPedestal':'Pd','FlowerVase':'✿','FlowerVaseHangingFancy':'✿',
- 'CeilingLight':'·','Headquarters':'Printing Pod','HabitatModuleMedium':'Habitat · 4 beds'}
-DECO = {'FlowerVase','FlowerVaseHangingFancy','MetalSculpture','CanvasTall','ItemPedestal','ParkSign','CeilingLight'}
+ 'CeilingLight':'·','WildPlant':'❀','WildPlantHanging':'❀','Headquarters':'Printing Pod','HabitatModuleMedium':'Habitat · 4 beds'}
+DECO = {'WildPlant','WildPlantHanging','FlowerVase','FlowerVaseHangingFancy','MetalSculpture','CanvasTall','ItemPedestal','ParkSign','CeilingLight'}
 
 s = [f'<svg viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Side view of the v3 semi-open base, tile grid">']
 s.append(f'<defs><pattern id="g" width="{C}" height="{C}" patternUnits="userSpaceOnUse"><path d="M {C} 0 L 0 0 0 {C}" fill="none" class="grid"/></pattern></defs>')
@@ -33,8 +33,8 @@ for r in L['named']:
         s.append(f'<rect class="{r["cls"]}" x="{sx(x)}" y="{sy(y)}" width="{C}" height="{C}"/>')
 for it in items:
     i, x, y = it['id'], it['x0'], it['y0']
-    if i in ('Tile', 'InsulationTile', 'TravelTubeWallBridge'):
-        cls = {'Tile': 'tile', 'InsulationTile': 'ins', 'TravelTubeWallBridge': 'tube'}[i]
+    if i in ('Tile', 'InsulationTile', 'TravelTubeWallBridge', 'NaturalTile'):
+        cls = {'Tile': 'tile', 'InsulationTile': 'ins', 'TravelTubeWallBridge': 'tube', 'NaturalTile': 'nat'}[i]
         s.append(f'<rect class="{cls}" x="{sx(x)}" y="{sy(y)}" width="{C}" height="{C}"/>')
 for it in items:
     i, x, y, w, h = it['id'], it['x0'], it['y0'], it['w'], it['h']
@@ -51,7 +51,7 @@ for it in items:
         else: s.append(f'<rect class="{cls}" x="{sx(x)}" y="{sy(y)+3}" width="{w*C}" height="{C-6}"><title>{t}</title></rect>')
 for it in items:
     i, x, y, w, h = it['id'], it['x0'], it['y0'], it['w'], it['h']
-    if i in ('Tile','InsulationTile','FirePole','LadderFast','TravelTube','TravelTubeWallBridge','Door','PressureDoor'): continue
+    if i in ('Tile','InsulationTile','NaturalTile','FirePole','LadderFast','TravelTube','TravelTubeWallBridge','Door','PressureDoor'): continue
     cls = 'b-deco' if i in DECO else 'b'
     if i in ('LuxuryBed', 'HabitatModuleMedium'): cls = 'b-bed'
     if i in ('SuitLocker', 'SuitMarker', 'TravelTubeEntrance'): cls = 'b-suit'
@@ -88,6 +88,7 @@ for r in L['named']:
     rows.append(f'<tr><td>{html.escape(r["name"])}</td><td class="n">{r["n"]}</td><td>{html.escape(b)}</td></tr>')
 
 head = open(f'{T}/head.part').read().replace('<title>Twin-Spine 8+6 Base</title>', '<title>Semi-Open 8d6b Base</title>')
+head = head.replace('</style>', '.nat{fill:var(--nat)}\n:root{--nat:#8a6a3f}\n</style>')
 body = open(f'{T}/body3.part').read()
 out = head + body.replace('%%SVG%%', '\n'.join(s)).replace('%%BNI%%', html.escape(BNI)).replace('%%ROOMS%%', '\n'.join(rows))
 open(OUTF, 'w').write(out)

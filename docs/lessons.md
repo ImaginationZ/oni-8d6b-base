@@ -7,6 +7,8 @@
 4. **Stacked rooms by type, not by routine** (v2). That caused backtracking (beds → washroom → past the exit → dining → back up to recreation). **Do:** design the flow first (sections 2 and 3 of findings.md), then place rooms along it.
 5. **Checkpoint orientation was backwards in v1 and v2.** Docks go on the clean side, opposite the arrow.
 
+6. **Assumed wild plants in pots count for a Nature Reserve** (v2 and the first v3). They don't. **Do:** mark room-rule assumptions as unverified on the page, and ask the owner to check them in-game early.
+
 ## How to get at the sources
 - **Yuque docs:** WebFetch returns only the title. `tools/yuque.py <url> <outdir>` reads `window.appData` for the book_id, calls `https://www.yuque.com/api/docs/<slug>?book_id=<id>&merge_dynamic_data=false`, prints the text outline and downloads every image (cdn.nlark.com, with a yuque Referer).
 - **Bilibili videos:**

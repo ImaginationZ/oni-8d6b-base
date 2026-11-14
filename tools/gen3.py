@@ -21,10 +21,12 @@ SIZE = {
  'GasPump':(2,2),'WaterPurifier':(4,3),'LiquidConditioner':(2,2),'LiquidReservoir':(2,3),'SuitFabricator':(4,3),
  'ManualGenerator':(2,2),'PowerTransformer':(3,2),'MedicalCot':(3,2),'Apothecary':(2,3),
  'HabitatModuleMedium':(5,4),   # Spacefarer Module: 5x4 per wiki; prefab ID (?)
+ 'NaturalTile':(1,1),'WildPlant':(1,1),'WildPlantHanging':(1,2),   # markers, not buildings: never emitted to BNI
 }
-SOLID = {'InsulationTile','Tile','CarpetTile','SteamTurbine2','TravelTubeWallBridge'}   # bound rooms
+SOLID = {'InsulationTile','Tile','CarpetTile','SteamTurbine2','TravelTubeWallBridge','NaturalTile'}
+MARKERS = {'NaturalTile','WildPlant','WildPlantHanging'}   # natural ground + wild plants: kept from the map, not built   # bound rooms
 DOORS = {'Door','PressureDoor'}
-CEIL = {'FlowerVaseHangingFancy','CeilingLight'}
+CEIL = {'FlowerVaseHangingFancy','CeilingLight','WildPlantHanging'}
 NOFLOOR = CEIL | {'SolidConduitInbox','SolidConduitOutbox','TravelTube','FirePole','LadderFast','GasPump',
                   'CanvasTall','SteamTurbine2','TravelTubeWallBridge'}
 
@@ -60,7 +62,12 @@ ROOMS = []   # (name, cls, x-range, y-range, size rule, required ids) for drawin
 place('SteamTurbine2', 40, 17, 'Steam Turbine: sits on the steam chamber, turns aquatuner heat into power')
 
 # --- envelope ---
-door_holes = {(22, 0), (23, 0), (22, TOP), (23, TOP), (19, TOP)}
+door_holes = {(22, 0), (23, 0), (22, TOP), (23, TOP), (19, TOP), (15, TOP), (16, TOP)}
+# nature reserve: wild plants in pots don't count (owner, 2026-11-14), so 4 plants grow from natural tiles,
+# 2 on the landing floor and 2 hanging from the roof, as in 拿个破笔水's reserve (4 cacti on natural tiles)
+for x in (15, 16):
+    place('NaturalTile', x, 21, 'Natural tile (keep from the map): wild plant grows on it')
+    place('NaturalTile', x, TOP, 'Natural tile (keep from the map): hanging wild plant grows from it')
 for y in range(0, TOP + 1):
     for x in (0, W):
         tiles('InsulationTile', [x], [y])
@@ -99,7 +106,7 @@ for y in range(1, TOP):
 for y in list(range(-3, 0)) + list(range(TOP + 1, TOP + 4)):
     place('LadderFast', 22, y, 'Ladder (outside)'); place('FirePole', 23, y, 'Fire pole (outside)')
 tiles('InsulationTile', [24], [0, TOP])
-ROOMS.append(('Nature Reserve (shaft + landing)', 'r-park', (15, 24), (1, 24), (32, 120), ['ParkSign']))
+ROOMS.append(('Nature Reserve (shaft + landing)', 'r-park', (15, 24), (1, 24), (32, 120), ['ParkSign', 'WildPlant', 'WildPlantHanging']))
 
 # ======================= LEFT BLOCK =======================
 # L1 (y1-3): frozen food store + frozen kitchen
@@ -167,8 +174,8 @@ place('SuitFabricator', 2, 22, 'Exosuit Forge'); place('StorageLockerSmart', 7, 
 place('StorageLockerSmart', 8, 22, 'Smart storage'); place('CeilingLight', 10, 24, 'Light')
 place('Door', 14, 22, 'Workshop door (off the landing)'); tiles('Tile', [14], [24])
 ROOMS.append(('Workshop', 'r-work', (1, 13), (22, 24), (1, 999), []))
-place('FlowerVase', 15, 22, 'Wild plant in pot'); place('FlowerVase', 16, 22, 'Wild plant in pot')
-place('FlowerVaseHangingFancy', 15, 23, 'Hanging wild plant'); place('FlowerVaseHangingFancy', 16, 23, 'Hanging wild plant')
+place('WildPlant', 15, 22, 'Wild plant on a natural tile (not a pot)'); place('WildPlant', 16, 22, 'Wild plant on a natural tile (not a pot)')
+place('WildPlantHanging', 15, 23, 'Hanging wild plant from a natural tile'); place('WildPlantHanging', 16, 23, 'Hanging wild plant from a natural tile')
 place('ParkSign', 17, 22, 'Park Sign')
 place('TravelTubeEntrance', 18, 22, 'Transit tube station (tube leaves through the roof, then left and right)')
 place('TravelTubeWallBridge', 19, TOP, 'Tube crossing through the roof')
@@ -271,6 +278,7 @@ print('\n'.join(errors) if errors else 'validation: OK')
 def anchor(it): return it['x0'] + (it['w'] - 1) // 2, it['y0']
 bni = {'blueprintItems': []}
 for it in items:
+    if it['id'] in MARKERS: continue
     ax, ay = anchor(it)
     e = {'id': it['id'], 'position': {'x': ax, 'y': ay}}
     if it['orient']: e['orientation'] = it['orient']

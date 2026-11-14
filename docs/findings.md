@@ -98,7 +98,7 @@ Sources: the author's own download (two `.blueprint` files + sandbox `.sav`), pa
 - **Interior** (`napobi_8d6b_semi_open_spacefarer_module.blueprint`, 10 × 8): 4 `LuxuryBed`, two rows of 2. Rows are 2 tall, with floors of metal, carpet and airflow tiles. A ladder column at x1 runs the full height. There's a gas vent (O₂ in), an element sensor + timer + buffer driving it, and a locked pressure door at the hatch row.
 - The interior is one room of about 50 tiles. The ladder column is 7 tall, so the wiki's ceiling rule (one column of 4 or more) and size rule (12–64) for Luxury Barracks are met. Decor items and whether room bonuses apply inside a rocket interior are *unverified*.
 - **Why it's compact.** All 8 beds plus their airlock take 19 × 4 = 76 tiles on the map. The interiors are off-map and automatically suit-free, so there's no bedroom atmosphere to manage. The closed base needed 12 × 8 for beds alone; our two 16-wide wings needed 32 × 4 plus an airlock.
-- **Building without a launch pad: confirmed by the owner (2026-11-14).** A Spacefarer Module can be built without a Rocket Platform underneath, so the trick works in normal play, not only in sandbox. Still *unverified*: whether bedroom room bonuses apply inside the interior, and how O₂ reaches it (the interior has a gas vent; the supply route from outside isn't worked out yet).
+- **Building without a launch pad: confirmed by the owner (2026-11-14).** A Spacefarer Module can be built without a Rocket Platform underneath, so the trick works in normal play, not only in sandbox. Owner-confirmed the same day: the **bedroom bonus applies inside** the habitat. Still *unverified*: how O₂ reaches it (the interior has a gas vent; the supply route from outside isn't worked out yet).
 
 **Dupe flow** (`10.jpg`; 4 shifts × 2, sleep first then rest):
 ① come down or up the shaft (nature reserve) → ② through the bionic-proof door into the dock corridor, suit off → ③ sleep in a habitat → ④ suit on, back to the shaft → ⑤ washroom (enter from the shaft via door x20 y8, one way, right to left for everyone) → ⑥ pick up food at the fridge window from the kitchen below → ⑦ banquet hall (communal table, phone, soda fountain; one-way door x5) → ⑧ up to the rec room → ⑨ back into the shaft → ⑩ tube (top) or fire pole (bottom) to work.
@@ -133,3 +133,9 @@ Sources: the author's own download (two `.blueprint` files + sandbox `.sav`), pa
 - **Ceiling ≥ 4 means 4 clear tiles inside, and a 4-tile storey grid gives only 3.** Per the wiki tip, only one vertical line needs to reach 4, so one raised column (a notch in the slab above) is enough. Earlier wing sketches assumed Luxury Barracks without this.
 - **64-tile cap.** A 16-wide wing with 4 interior rows is exactly 64. Adding a checkpoint and 4 docks to such a wing (option A) would push it to 21 × 3 + notch, about 64: right at the limit.
 - Whether atmo suit docks and checkpoints count as industrial machinery isn't stated on the wiki. §5 has indirect evidence that they don't.
+
+## 8. In-game facts confirmed by the owner (2026-11-14)
+- A Spacefarer Module can be built without a launch pad.
+- Bedroom room bonuses apply inside a rocket habitat interior.
+- Wild plants in flower pots do **not** count toward a Nature Reserve's 4 wild plants. Use plants growing on natural tiles, as 拿个破笔水 does.
+- A deep-frozen banquet hall still counts as a Banquet Hall.
