@@ -1,6 +1,8 @@
 # Progress
 
 ## Status (2026-11-14)
+**Build ownership moved (2026-11-14):** the owner's desktop session now builds the new design (拿个破笔水's semi-open layout with the owner's changes, as a BNI-compatible `.blueprint`). The remote session does analysis and findings only. The v3 below was built and approved in the remote session before this handover. Treat it as input for the desktop build, not as the build of record.
+
 **v3 is built and published** (semi-open, 46 × 26, habitat bedroom, 5 docks). It's waiting for the owner's review.
 
 ## Done
