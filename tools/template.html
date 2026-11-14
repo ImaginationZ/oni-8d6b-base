@@ -1,0 +1,296 @@
+<title>Twin-Spine 8+6 Base</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a drafting sheet. One wide to-scale drawing up top, then narrow reading columns of spec tables. */
+:root{
+  --bg:#eef3f4; --sheet:#f8fbfb; --fg:#172326; --muted:#55686c; --line:#c9d6d8; --grid:#dbe5e7;
+  --accent:#0f7c86; --accent-ink:#ffffff; --warn:#a4570c;
+  --tile:#8d9a9c; --ins:#5a5446; --door:#c77a1a; --pdoor:#b0451f; --pole:#7a4b1c; --ladder:#3d6b8c; --tube:#7d58a8;
+  --b:#ffffff; --b-stroke:#4c5d61; --b-deco:#f3e9d2; --b-bed:#dfe6fb; --b-suit:#e9e4f6; --b-key:#ffd7a3;
+  --r-sleep:#c8d3f7; --r-bion:#bfe6e1; --r-wash:#c3e6f2; --r-rec:#f6e1b5; --r-park:#cfe8c0; --r-suit:#e2dcef;
+  --r-kit:#f6d2b7; --r-ban:#f3c9d0; --r-bsvc:#b9ddd6; --r-pow:#efe6a6; --r-life:#cde0ee; --r-work:#dcdcd6; --r-steam:#f2c3b8; --r-shaft:#e6ecec;
+  --s-work:#9fb4b8; --s-down:#f1c46b; --s-bath:#7cc3d9; --s-bed:#6f7fcf;
+  --display:"Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0f1719; --sheet:#152024; --fg:#e3eced; --muted:#93a7ab; --line:#2a3a3e; --grid:#1d2b2f;
+  --accent:#4fc3cc; --accent-ink:#06282b; --warn:#f0a35a;
+  --tile:#5d6b6e; --ins:#8c8265; --door:#e09a3c; --pdoor:#e3683d; --pole:#d19a5d; --ladder:#7fb2d6; --tube:#b394dc;
+  --b:#1f2e33; --b-stroke:#9db1b5; --b-deco:#3a3424; --b-bed:#27325a; --b-suit:#352d4d; --b-key:#6b4614;
+  --r-sleep:#232c4f; --r-bion:#1c3d3a; --r-wash:#1b3b48; --r-rec:#43381c; --r-park:#243d1f; --r-suit:#2f2a40;
+  --r-kit:#47301f; --r-ban:#472630; --r-bsvc:#1a3a35; --r-pow:#3e3a17; --r-life:#1f3242; --r-work:#2c2e2b; --r-steam:#4a2721; --r-shaft:#1a2427;
+  --s-work:#4f6468; --s-down:#b98a2c; --s-bath:#3a8aa3; --s-bed:#4553a3; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0f1719; --sheet:#152024; --fg:#e3eced; --muted:#93a7ab; --line:#2a3a3e; --grid:#1d2b2f;
+  --accent:#4fc3cc; --accent-ink:#06282b; --warn:#f0a35a;
+  --tile:#5d6b6e; --ins:#8c8265; --door:#e09a3c; --pdoor:#e3683d; --pole:#d19a5d; --ladder:#7fb2d6; --tube:#b394dc;
+  --b:#1f2e33; --b-stroke:#9db1b5; --b-deco:#3a3424; --b-bed:#27325a; --b-suit:#352d4d; --b-key:#6b4614;
+  --r-sleep:#232c4f; --r-bion:#1c3d3a; --r-wash:#1b3b48; --r-rec:#43381c; --r-park:#243d1f; --r-suit:#2f2a40;
+  --r-kit:#47301f; --r-ban:#472630; --r-bsvc:#1a3a35; --r-pow:#3e3a17; --r-life:#1f3242; --r-work:#2c2e2b; --r-steam:#4a2721; --r-shaft:#1a2427;
+  --s-work:#4f6468; --s-down:#b98a2c; --s-bath:#3a8aa3; --s-bed:#4553a3; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:36px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.01em}
+h1{font-size:clamp(28px,4.4vw,44px);line-height:1.05}
+h2{font-size:22px;margin-bottom:10px}
+h3{font-size:16px;margin-bottom:6px}
+p{margin:0;max-width:68ch}
+.eyebrow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
+header{display:grid;gap:12px}
+.lede{color:var(--muted);font-size:16px}
+.specs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.spec{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);background:var(--sheet);padding:4px 9px;border-radius:3px}
+.spec b{color:var(--accent);font-weight:500}
+.sheet{background:var(--sheet);border:1px solid var(--line);border-radius:4px;padding:14px}
+.draw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.draw svg{display:block;max-width:none;height:auto}
+.grid{stroke:var(--grid);stroke-width:1}
+.tile{fill:var(--tile)} .ins{fill:var(--ins)}
+.door{fill:var(--door)} .pdoor{fill:var(--pdoor)}
+.pole{stroke:var(--pole);stroke-width:2.2}
+.ladder line{stroke:var(--ladder);stroke-width:1.3}
+.tube{fill:var(--tube);opacity:.8}
+.b{fill:var(--b);stroke:var(--b-stroke);stroke-width:1}
+.b-deco{fill:var(--b-deco);stroke:var(--b-stroke);stroke-width:.8}
+.b-bed{fill:var(--b-bed);stroke:var(--b-stroke);stroke-width:1}
+.b-suit{fill:var(--b-suit);stroke:var(--b-stroke);stroke-width:1}
+.b-key{fill:var(--b-key);stroke:var(--warn);stroke-width:1.6}
+.lbl{fill:var(--fg);font-family:var(--mono);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.rlab{fill:var(--muted);font-family:var(--display);font-size:9.5px;font-weight:600;letter-spacing:.03em}
+.axis{fill:var(--accent);font-family:var(--display);font-size:12px;font-weight:700}
+.note{fill:var(--muted);font-family:var(--mono);font-size:10px}
+.r-sleep{fill:var(--r-sleep)} .r-bion{fill:var(--r-bion)} .r-wash{fill:var(--r-wash)} .r-rec{fill:var(--r-rec)} .r-park{fill:var(--r-park)}
+.r-suit{fill:var(--r-suit)} .r-kit{fill:var(--r-kit)} .r-ban{fill:var(--r-ban)} .r-bsvc{fill:var(--r-bsvc)} .r-pow{fill:var(--r-pow)}
+.r-life{fill:var(--r-life)} .r-work{fill:var(--r-work)} .r-steam{fill:var(--r-steam)} .r-shaft{fill:var(--r-shaft)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:2px;display:inline-block;border:1px solid var(--line)}
+.caption{font-size:13px;color:var(--muted);margin-top:8px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.cols>*{min-width:0}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.f{font-family:var(--display);font-weight:700;color:var(--accent);white-space:nowrap}
+.sched{display:grid;grid-template-columns:118px repeat(24,minmax(14px,1fr));gap:2px;font-family:var(--mono);font-size:11px;min-width:560px}
+.sched .h{color:var(--muted);text-align:center}
+.sched .who{font-family:var(--body);font-size:12.5px;padding-right:6px;white-space:nowrap}
+.c{height:22px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--fg)}
+.c.W{background:var(--s-work)} .c.D{background:var(--s-down)} .c.B{background:var(--s-bath)} .c.S{background:var(--s-bed);color:#fff}
+.c.eat{outline:2px solid var(--warn);outline-offset:-2px;font-weight:600}
+ul{margin:0;padding-left:20px;display:grid;gap:5px;max-width:72ch}
+.pill{font-family:var(--mono);font-size:11px;padding:1px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.check{border-left:3px solid var(--warn);padding:10px 14px;background:var(--sheet)}
+textarea{width:100%;height:180px;font-family:var(--mono);font-size:11.5px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:3px;padding:8px;resize:vertical}
+button{font-family:var(--display);font-weight:600;font-size:14px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:3px;padding:8px 14px;cursor:pointer}
+button:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+a{color:var(--accent)}
+code{font-family:var(--mono);font-size:.92em}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Oxygen Not Included · all DLC · 8 duplicants + 6 bionics</div>
+  <h1>Twin-Spine 8+6 Base</h1>
+  <p class="lede">An end-game living block on a strict 4-tile storey grid. One central shaft serves seven storeys. The middle storey is the only way out: dupes walk through a nature reserve, put on an atmo suit, and step onto an exterior spine that runs from the bottom of the map to space, with a transit tube station on each side.</p>
+  <div class="specs">
+    <span class="spec">envelope <b>38 × 36</b> tiles</span>
+    <span class="spec"><b>7</b> storeys × <b>4</b> tall</span>
+    <span class="spec"><b>14</b> comfy beds</span>
+    <span class="spec"><b>1</b> communal table</span>
+    <span class="spec"><b>1</b> gunk extractor · <b>1</b> lube station</span>
+    <span class="spec"><b>12</b> suit docks · <b>2</b> spines · <b>2</b> tube stations</span>
+  </div>
+</header>
+
+<section>
+  <h2>Section drawing</h2>
+  <div class="sheet draw">%%SVG%%</div>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--tile)"></i>tile</span>
+    <span><i class="sw" style="background:var(--ins)"></i>insulated tile</span>
+    <span><i class="sw" style="background:var(--door)"></i>door</span>
+    <span><i class="sw" style="background:var(--pdoor)"></i>mechanized airlock</span>
+    <span><i class="sw" style="background:var(--pole)"></i>fire pole</span>
+    <span><i class="sw" style="background:var(--ladder)"></i>plastic ladder</span>
+    <span><i class="sw" style="background:var(--tube)"></i>transit tube</span>
+    <span><i class="sw" style="background:var(--b-key)"></i>the one communal table</span>
+  </div>
+  <p class="caption">1 square = 1 tile. Hover a building for its name and in-game ID. Pipes, wires, automation and conveyor rails are left out to keep the drawing readable. They're routed in the Utilities section below. Each spine runs past the edge of the drawing: up to space and down to the bottom of the map.</p>
+</section>
+
+<section>
+  <h2>Storey by storey</h2>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>West wing (16 × 4)</th><th>East wing (16 × 4)</th><th>Why here</th></tr></thead>
+    <tbody>
+      <tr><td class="f">F1</td><td>Luxury Barracks: 4 comfy beds, hanging pots</td><td>Luxury Barracks: 4 comfy beds, hanging pots</td><td>Top floor, farthest from machine heat and noise. Each wing is exactly 64 tiles, the Luxury Barracks maximum.</td></tr>
+      <tr><td class="f">F2</td><td>Luxury Barracks: 3 bionic beds + pedestal, sculpture, canvas</td><td>Same, mirrored</td><td>Bionics defragment in a bed and give off 1800 lux within 3 tiles. A solid floor between them and the sleepers on F1 means they can't wake anyone.</td></tr>
+      <tr><td class="f">F3</td><td>Washroom: 2 lavatories, gunk extractor, 2 sinks</td><td>Recreation: soda fountain, arcade, massage table, 2 beach chairs under a sun lamp</td><td>Both dupe types share one washroom (+2 morale each) and one rec room. Beach chairs give +8 instead of +5 with the sun lamp's light.</td></tr>
+      <tr><td class="f">F4</td><td>Suit airlock (6 docks + checkpoint) · Nature Reserve (8 × 4)</td><td>Nature Reserve · suit airlock (6 docks + checkpoint)</td><td>The only exit. Everyone leaving walks through a 32-tile nature reserve (+6 morale), then gears up. It sits mid-height, so going up or down costs the same.</td></tr>
+      <tr><td class="f">F5</td><td>Kitchen: gas range, spice grinder, grill, 3 fridges, conveyor receptacle</td><td>Banquet Hall: one communal table, espresso machine, pedestal, sculpture, canvas</td><td>Fridges sit at the shaft door, so the walk from fridge to table is about 10 tiles.</td></tr>
+      <tr><td class="f">F6</td><td>Bionic service: lubrication station, canister filler, 4 power bank chargers, smart storage</td><td>Power plant: 2 hydrogen generators, smart battery, steam turbine (top of the steam chamber)</td><td>All bionic upkeep is in one room, one floor below their beds. Hydrogen from the SPOM goes straight up one floor to the generators.</td></tr>
+      <tr><td class="f">F7</td><td>SPOM: 2 electrolyzers, 2 H₂ pumps on top, 2 O₂ pumps · water sieve room</td><td>Workshop: exosuit forge, crafting station, coolant buffer · insulated steam chamber with aquatuner</td><td>Hot, wet and noisy machines stay at the bottom. CO₂ sinks there too.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="cols">
+  <div>
+    <h2>One table, four schedules</h2>
+    <p>The communal table seats 3. Split the 8 dupes into groups of 3, 3 and 2, and start each group's day one hour after the previous one. Each group eats in the first Downtime hour after waking (outlined), so at most 3 dupes are at the table at once. The same offset spreads out the toilets, sinks and rec room.</p>
+  </div>
+  <div class="sheet tbl">
+    <div class="sched" id="sched" aria-label="Schedule grid, 24 hours"></div>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--s-work)"></i>Work</span>
+      <span><i class="sw" style="background:var(--s-down)"></i>Downtime</span>
+      <span><i class="sw" style="background:var(--s-bath)"></i>Bathtime</span>
+      <span><i class="sw" style="background:var(--s-bed)"></i>Bedtime (bionics: defrag)</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What's shared, and how many</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Facility</th><th>Count</th><th>Used by</th><th>Sizing</th></tr></thead>
+    <tbody>
+      <tr><td>Communal Table (5×1, 3 seats)</td><td class="n">1</td><td>8 dupes</td><td>3 / 3 / 2 groups, one hour apart. Bionics don't eat.</td></tr>
+      <tr><td>Banquet Hall</td><td class="n">1</td><td>8 dupes</td><td>Needs the communal table, a recreation building (espresso), a displayed ornament and decor. No mess table allowed. 32–120 tiles; this one is 64.</td></tr>
+      <tr><td>Washroom</td><td class="n">1</td><td>all 14</td><td>2 lavatories for 8 staggered dupes. The gunk extractor is in the same room, so bionics get the +2 washroom morale too.</td></tr>
+      <tr><td>Gunk Extractor</td><td class="n">1</td><td>6 bionics</td><td>Gunk fills about 25% per cycle and is emptied at 60%, so 6 bionics make about 2.5 visits per cycle.</td></tr>
+      <tr><td>Lubrication Station</td><td class="n">1</td><td>6 bionics</td><td>200 kg tank, 20 kg per cycle. About one visit every 8 cycles per bionic.</td></tr>
+      <tr><td>Power Bank Charger</td><td class="n">4</td><td>6 bionics</td><td>The wiki's rule is bionics ÷ 2 + 1. Each bionic uses one 120 kJ bank per cycle (200 W).</td></tr>
+      <tr><td>Canister Filler</td><td class="n">1</td><td>6 bionics</td><td>About 60 kg of O₂ per bionic per cycle (240 kg tank, 100 g/s). They prefer canisters over breathing base air.</td></tr>
+      <tr><td>Recreation Room</td><td class="n">1</td><td>all 14</td><td>Beach chairs, soda fountain and arcade work for both dupe types. The espresso machine in the banquet hall is a second outlet.</td></tr>
+      <tr><td>Nature Reserve</td><td class="n">2</td><td>all 14</td><td>One on each side of the shaft, so the +6 morale applies whichever exit a dupe takes.</td></tr>
+      <tr><td>Atmo Suit Docks</td><td class="n">12</td><td>all 14</td><td>6 per exit. A cook and a dupe on defrag or rest are usually inside. Add 1–2 more if your colony sends everyone out at once.</td></tr>
+      <tr><td>Comfy Beds</td><td class="n">14</td><td>one each</td><td>Beds are assigned per dupe, so they can't be shared. 8 + 6, in four 64-tile Luxury Barracks.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="cols">
+  <div>
+    <h2>Getting out</h2>
+    <ul>
+      <li><b>Inside:</b> fire pole (fast down) and plastic ladder (fast up) in a 2-wide shaft. Every storey has a door on both sides of the shaft.</li>
+      <li><b>Exit (F4):</b> shaft → nature reserve → door → checkpoint → 6 docks → mechanized airlock → exterior spine. Coming back is the same path in reverse, and dupes drop their suits before the checkpoint.</li>
+      <li><b>Spines:</b> ladder and fire pole pairs just outside the west and east walls. Extend them all the way to the space surface and the bottom of the map.</li>
+      <li><b>Tubes:</b> one transit tube access on each side, at airlock level, already suited. The tube leaves above the station and heads west or east. The 5 tiles above and below each station stay clear for more tube lines.</li>
+      <li>Both exits reach both directions. If one side runs out of suits, pathing sends dupes to the other side.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Morale on hand</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Dupes</th><th>Bionics</th></tr></thead>
+      <tbody>
+        <tr><td>Banquet Hall meal</td><td class="n">+6</td><td class="n">—</td></tr>
+        <tr><td>Table salt / caviar at table</td><td class="n">+1 / +3</td><td class="n">—</td></tr>
+        <tr><td>Eating with others</td><td class="n">+1</td><td class="n">—</td></tr>
+        <tr><td>Food quality (gas range)</td><td class="n">varies</td><td class="n">—</td></tr>
+        <tr><td>Luxury Barracks</td><td class="n">+2</td><td class="n">+2</td></tr>
+        <tr><td>Washroom</td><td class="n">+2</td><td class="n">+2</td></tr>
+        <tr><td>Nature Reserve</td><td class="n">+6</td><td class="n">+6</td></tr>
+        <tr><td>Beach chair, lit</td><td class="n">+8</td><td class="n">+8</td></tr>
+        <tr><td>Soda / espresso</td><td class="n">+4</td><td class="n">+4</td></tr>
+        <tr><td>Fresh oil (phyto / crude)</td><td class="n">—</td><td class="n">+2 / +3</td></tr>
+        <tr><td>Decor (up to)</td><td class="n">+12</td><td class="n">+12</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <h2>Utilities</h2>
+  <div class="cols">
+    <div><h3>Gas</h3><ul>
+      <li>O₂: the SPOM pumps feed a pipe up the west shaft wall to one vent per wing near the shaft door, plus branches to the 12 docks and the canister filler. Set an atmo sensor so vents stop at about 1.8 kg.</li>
+      <li>O₂ demand is about 0.8 kg/s for dupes and 0.6 kg/s for bionic canisters. 2 electrolyzers make 1.78 kg/s.</li>
+      <li>H₂ (224 g/s) goes up to the 2 generators (200 g/s, 1.6 kW). Send the surplus out of the base.</li>
+      <li>CO₂ sinks to F7. Put a mini gas pump with a CO₂ element sensor at the bottom of the shaft and pipe it out, for example to a slickster ranch.</li>
+      <li>Natural gas to the gas range (100 g/s while cooking).</li>
+    </ul></div>
+    <div><h3>Liquid</h3><ul>
+      <li>Clean water in: electrolyzers (2 kg/s), lavatories, sinks, espresso, soda fountain. Bring it from outside; the toilet loop alone is far too small.</li>
+      <li>Polluted water from lavatories and sinks goes to the sieve on F7, which returns clean water to the same line.</li>
+      <li>The gunk extractor pipe leads out of the base, to an oil or gunk refinery.</li>
+      <li>Phyto oil or crude oil goes to the lubrication station. Crude oil gives a bigger buff.</li>
+      <li>Cooling: an aquatuner in the insulated steam chamber under the turbine runs one coolant loop of radiant pipe through the floor rows of F7, F6 and F5 (electrolyzers, chargers, lube station, range). The turbine's water output goes back into the chamber.</li>
+    </ul></div>
+    <div><h3>Power, solids, logic</h3><ul>
+      <li>Generation: 2 × 800 W hydrogen plus the turbine (up to 850 W). The heavy draws are chargers (about 240 W average each), sun lamp 960 W, aquatuner 1.2 kW, soda and espresso 480 W each, and the arcade. Bring a heavy-watt line from your main grid into F6.</li>
+      <li>F6 east qualifies as a Power Plant room, so a Power Control Station there can boost the generators.</li>
+      <li>Raw ingredients come in on a conveyor rail that runs up the west spine and through the wall into the kitchen receptacle.</li>
+      <li>Smart storage next to the chargers holds charged power banks, so bionics pick them up in the same trip.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Load it into Blueprint Not Included</h2>
+  <p>This JSON uses the same <code>blueprintItems</code> format that BNI's own API serves (<code>/api/getblueprint/&lt;id&gt;</code>): IDs, positions anchored at the bottom-centre tile, and orientation. It includes every tile, door, ladder and building in the drawing.</p>
+  <div class="row" style="margin-top:10px"><button type="button" id="copy">Copy JSON</button><span class="pill" id="copied" hidden>Copied</span><span class="pill" id="sel" hidden>Text selected. Press Ctrl+C.</span></div>
+  <textarea id="bni" readonly aria-label="Blueprint JSON">%%BNI%%</textarea>
+</section>
+
+<section class="check">
+  <h2>Check in game before you commit</h2>
+  <ul>
+    <li><b>BNI import is untested.</b> The file matches the format BNI's API returns, but I couldn't upload it to confirm. <code>SpiceGrinder</code> and <code>CraftingTable</code> aren't in BNI's old public database, so those two IDs are the least certain.</li>
+    <li><b>Gunk extractor and the washroom.</b> The wiki says bionics get the washroom bonus from an extractor inside a Washroom, but doesn't say whether the extractor counts as industrial machinery. If the room loses its type, swap the extractor with the canister filler on F6.</li>
+    <li><b>Checkpoint direction.</b> The west checkpoint is flipped (orientation 5). Both should point outward, with the docks between the checkpoint and the airlock.</li>
+    <li><b>Steam turbine.</b> It sits in the F6 floor row, so its bottom row forms the ceiling of the steam chamber. That's the usual build, but confirm the game accepts the placement.</li>
+    <li><b>Wild plants in pots.</b> The nature reserves use 4 floor pots and 2 hanging pots. Plant wild-type decor plants, such as Mirth Leaf or Bluff Briar, and don't fertilize them.</li>
+    <li>I couldn't watch the reference videos. 大叔追云彩 hasn't released the layout document, so this is my own design, not a copy of theirs. It follows the conventions the videos' titles and the BNI 8-dupe bases share: a central shaft, 16-wide wings with 64-tile rooms, and a single banquet hall.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>References</h2>
+  <ul>
+    <li><a href="https://www.bilibili.com/video/BV1Zi2EBYE25" target="_blank" rel="noopener">拿个破笔水 · 8复制人+6仿生人混合基地二度重制版</a></li>
+    <li><a href="https://www.bilibili.com/video/BV1PAm2B9Ed4/" target="_blank" rel="noopener">大叔追云彩 · 8+6半开放式基地</a> and <a href="https://www.bilibili.com/video/BV192e4zvEZ1/" target="_blank" rel="noopener">8+6混仿半开放基地</a></li>
+    <li><a href="https://www.bilibili.com/video/BV1Q27gzkEDS/" target="_blank" rel="noopener">大叔追云彩 · 强制匹配仿生人电池消耗与休息时间</a></li>
+    <li>BNI bases studied: <a href="https://blueprintnotincluded.org/b/6ad772ac4fc40c07504b9b75" target="_blank" rel="noopener">Base for 8 standard duplicants (YVVT)</a>, <a href="https://blueprintnotincluded.org/b/6af1404d366210d1e7d7324c" target="_blank" rel="noopener">Mushroom Quiche Base 8 Dupes</a>, <a href="https://blueprintnotincluded.org/b/6a6ca8217bb84f5c761c5950" target="_blank" rel="noopener">Somium sleepers base</a>, <a href="https://blueprintnotincluded.org/b/6aea1bb1334f952ec4d32a48" target="_blank" rel="noopener">Bionic Dupe Minibase</a></li>
+    <li>Oxygen Not Included wiki: <a href="https://oxygennotincluded.wiki.gg/wiki/Bionic_Duplicant" target="_blank" rel="noopener">Bionic Duplicant</a>, <a href="https://oxygennotincluded.wiki.gg/wiki/Room" target="_blank" rel="noopener">Rooms</a>, <a href="https://oxygennotincluded.wiki.gg/wiki/Communal_Table" target="_blank" rel="noopener">Communal Table</a></li>
+  </ul>
+</section>
+</div>
+
+<script>
+(function(){
+  var rows=[
+    ['Dupes A (3)', 0], ['Dupes B (3)', 1], ['Dupes C (2)', 2]
+  ];
+  // base day for a dupe group, hour 0 = wake: D(eat) W×14 B D D S×6
+  var base=['D','W','W','W','W','W','W','W','W','W','W','W','W','W','W','B','D','D','S','S','S','S','S','S'];
+  var bion=[];for(var h=0;h<24;h++){bion.push(h>=12&&h<=13?'D':(h>=14&&h<=15?'S':'W'));}
+  var g=document.getElementById('sched'); var out='<div></div>';
+  for(var h=0;h<24;h++) out+='<div class="h">'+h+'</div>';
+  rows.forEach(function(r){
+    out+='<div class="who">'+r[0]+'</div>';
+    for(var h=0;h<24;h++){var k=base[(h-r[1]+24)%24];var eat=((h-r[1]+24)%24)===0;
+      out+='<div class="c '+k+(eat?' eat':'')+'" title="'+r[0]+' · hour '+h+'">'+(eat?'eat':'')+'</div>';}
+  });
+  out+='<div class="who">Bionics (6)</div>';
+  for(var h=0;h<24;h++) out+='<div class="c '+bion[h]+'" title="Bionics · hour '+h+'"></div>';
+  g.innerHTML=out;
+  var b=document.getElementById('copy'), t=document.getElementById('bni');
+  b.addEventListener('click',function(){
+    var done=function(){document.getElementById('copied').hidden=false;document.getElementById('sel').hidden=true;};
+    var fail=function(){t.focus();t.select();document.getElementById('sel').hidden=false;};
+    try{navigator.clipboard.writeText(t.value).then(done,fail);}catch(e){fail();}
+  });
+})();
+</script>

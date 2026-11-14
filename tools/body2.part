@@ -1,0 +1,207 @@
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Oxygen Not Included · all DLC · 8 duplicants + 6 bionics · v2</div>
+  <h1>Twin-Spine 8+6 Base</h1>
+  <p class="lede">Built on 大叔追云彩's 8+6 semi-open base. The schedules do the sharing: 4 dupe shifts of 2 and 3 bionic shifts of 2, with no beds for the bionics. Each storey is 4 tiles tall around one central shaft. Dupes leave through the middle storey: they walk past the printing pod in a nature reserve, put on a suit, and step onto a spine that runs from the bottom of the map to space.</p>
+  <div class="specs">
+    <span class="spec">envelope <b>38 × 31</b> tiles</span>
+    <span class="spec"><b>6</b> storeys × <b>4</b> tall</span>
+    <span class="spec"><b>8</b> comfy beds · <b>0</b> bionic beds</span>
+    <span class="spec"><b>1</b> communal table</span>
+    <span class="spec"><b>8</b> suit docks</span>
+    <span class="spec">printing pod inside</span>
+  </div>
+</header>
+
+<section>
+  <h2>Section drawing</h2>
+  <div class="sheet draw">%%SVG%%</div>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--tile)"></i>tile</span>
+    <span><i class="sw" style="background:var(--ins)"></i>insulated tile</span>
+    <span><i class="sw" style="background:var(--door)"></i>door</span>
+    <span><i class="sw" style="background:var(--pdoor)"></i>mechanized airlock</span>
+    <span><i class="sw" style="background:var(--pole)"></i>fire pole</span>
+    <span><i class="sw" style="background:var(--ladder)"></i>plastic ladder</span>
+    <span><i class="sw" style="background:var(--tube)"></i>transit tube</span>
+    <span><i class="sw" style="background:var(--b-key)"></i>the one communal table</span>
+  </div>
+  <p class="caption">1 square = 1 tile. Hover a building for its name and in-game ID. Pipes, wires, automation and conveyor rails aren't drawn; the Utilities section lists their routes. The spines continue past the edge of the drawing, up to space and down to the bottom of the map.</p>
+</section>
+
+<section>
+  <h2>What comes from 大叔追云彩, and what changed</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Idea</th><th>His base</th><th>This base</th></tr></thead>
+    <tbody>
+      <tr><td>Dupe schedule</td><td>4 shifts × 2 dupes. Each shift sleeps 4 h, rests 4 h, works 16 h, with shifts 5 h apart.</td><td>Same</td></tr>
+      <tr><td>Bionic schedule</td><td>3 shifts × 2 on a 3-cycle schedule. No Bedtime. Each pair rests 6 h once every 3 cycles.</td><td>Same, so no bionic beds</td></tr>
+      <tr><td>Dupe beds</td><td>4 beds inside a docked rocket</td><td>8 proper comfy beds in two 64-tile Luxury Barracks. Vanilla beds belong to one dupe and can't be shared.</td></tr>
+      <tr><td>Washroom</td><td>Lavatories with no sink. 2 shine bugs or depleted-uranium tiles kill germs.</td><td>Lavatories and sinks, with the gunk extractor in the same room</td></tr>
+      <tr><td>Suit docks</td><td>5 docks, one suit per dupe</td><td>8 docks, 4 per exit. You still need a suit for every dupe that goes out.</td></tr>
+      <tr><td>Printing pod</td><td>Inside the base, in the park</td><td>Inside the west nature reserve</td></tr>
+      <tr><td>Power banks, food</td><td>Conveyor loop takes empty banks to the chargers. Cooked food comes in by conveyor, with only finished dishes allowed.</td><td>Same: a loader on the bionic-service storey and a receptacle in the kitchen</td></tr>
+      <tr><td>Footprint</td><td>45 × 32 (1440 tiles), semi-open</td><td>38 × 31 (1178 tiles), plus an exterior spine on each side with a tube station</td></tr>
+      <tr><td>Rockets in base</td><td>2, for oxygen cargo storage and a bed rocket</td><td>Left out. They aren't needed now that the beds are proper.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Storey by storey</h2>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>West wing (16 × 4)</th><th>East wing (16 × 4)</th><th>Why here</th></tr></thead>
+    <tbody>
+      <tr><td class="f">F1</td><td>Luxury Barracks: 4 comfy beds</td><td>Luxury Barracks: 4 comfy beds</td><td>Top storey, away from machine heat. Each wing is 64 tiles, the room maximum. One dupe from each shift sleeps at a time.</td></tr>
+      <tr><td class="f">F2</td><td>Washroom: 2 lavatories, gunk extractor, 2 sinks</td><td>Recreation room: soda fountain, arcade, massage table, 2 beach chairs under a sun lamp</td><td>Shared by all 14. The gunk extractor in the washroom gives bionics +2 washroom morale.</td></tr>
+      <tr><td class="f">F3</td><td>Airlock (4 docks + checkpoint) · Nature Reserve with the printing pod</td><td>Nature Reserve · airlock (4 docks + checkpoint)</td><td>The only exit, so everyone leaving walks through a 40-tile reserve (+6 morale). New printed dupes appear inside the base.</td></tr>
+      <tr><td class="f">F4</td><td>Kitchen: gas range, spice grinder, grill, 3 fridges, conveyor receptacle</td><td>Banquet Hall: one communal table, espresso machine, pedestal, sculpture, canvas</td><td>The fridges sit next to the shaft door, so food goes about 10 tiles to the table.</td></tr>
+      <tr><td class="f">F5</td><td>Bionic service: lube station, canister filler, 4 chargers, smart storage, conveyor loader</td><td>Power plant: 2 hydrogen generators, smart battery, steam turbine</td><td>All bionic upkeep in one room. Hydrogen goes up one storey from the SPOM.</td></tr>
+      <tr><td class="f">F6</td><td>SPOM: 2 electrolyzers, pumps · water sieve</td><td>Workshop: exosuit forge, crafting station · insulated steam chamber with aquatuner</td><td>Hot and wet machines go at the bottom, where CO₂ collects.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="cols">
+  <div>
+    <h2>Schedules</h2>
+    <p>Dupes have 4 shifts of 2. Each shift sleeps first, then rests, and the shifts start 5 hours apart, so no two shifts are ever asleep at the same time. The table, toilets and rec room see at most 2 dupes at once.</p>
+    <p style="margin-top:8px">Bionics use a 3-cycle schedule. Each pair rests for 6 hours on its own cycle and works the rest of the time. There's no Bedtime, because bionics have no stamina and defragmenting is optional. That frees all their bed space.</p>
+  </div>
+  <div class="sheet tbl">
+    <div class="sched" id="sched" aria-label="Schedule grid, 24 hours"></div>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--s-work)"></i>Work</span>
+      <span><i class="sw" style="background:var(--s-down)"></i>Downtime</span>
+      <span><i class="sw" style="background:var(--s-bed)"></i>Bedtime</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What's shared, and how many</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Facility</th><th>Count</th><th>Used by</th><th>Sizing</th></tr></thead>
+    <tbody>
+      <tr><td>Communal Table (3 seats)</td><td class="n">1</td><td>8 dupes</td><td>At most 2 dupes rest at a time. Bionics don't eat.</td></tr>
+      <tr><td>Banquet Hall</td><td class="n">1</td><td>8 dupes</td><td>Has the communal table, an espresso machine (recreation), one displayed item on a pedestal, and decor. One displayed item is enough.</td></tr>
+      <tr><td>Washroom</td><td class="n">1</td><td>all 14</td><td>2 lavatories and 2 sinks. At most 2 dupes are off shift at once, and bionics use the gunk extractor.</td></tr>
+      <tr><td>Gunk Extractor</td><td class="n">1</td><td>6 bionics</td><td>Gunk fills about 25% per cycle, so 6 bionics make about 2.5 visits per cycle.</td></tr>
+      <tr><td>Lubrication Station</td><td class="n">1</td><td>6 bionics</td><td>200 kg tank, 20 kg per cycle. Time its door to the rest periods, as in his lube-station video.</td></tr>
+      <tr><td>Power Bank Charger</td><td class="n">4</td><td>6 bionics</td><td>Bionics ÷ 2 + 1. The conveyor loop returns empty banks to the chargers.</td></tr>
+      <tr><td>Canister Filler</td><td class="n">1</td><td>6 bionics</td><td>About 60 kg of O₂ per bionic per cycle.</td></tr>
+      <tr><td>Comfy Beds</td><td class="n">8</td><td>dupes only</td><td>One per dupe, because the vanilla game can't share beds.</td></tr>
+      <tr><td>Atmo Suit Docks</td><td class="n">8</td><td>all 14</td><td>4 per exit. Make one suit for every dupe that goes out.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="cols">
+  <div>
+    <h2>Getting out</h2>
+    <ul>
+      <li><b>Inside:</b> a fire pole for going down and a plastic ladder for going up. Each storey has a door on both sides of the shaft.</li>
+      <li><b>Exit (F3):</b> shaft → nature reserve → door → checkpoint → 4 docks → mechanized airlock → spine.</li>
+      <li><b>Spines:</b> a ladder and fire pole on each outer wall, running from the space surface to the bottom of the map.</li>
+      <li><b>Tubes:</b> one transit tube station per side at airlock level, with the tube heading west or east. The rows above and below stay clear for more tube lines.</li>
+      <li><b>Idle dupes late-game</b> wait at the checkpoint and tie up docks. Following his note, either build a gym of manual generators outside, or enable the checkpoint only when a duplicant sensor detects someone.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Morale on hand</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Dupes</th><th>Bionics</th></tr></thead>
+      <tbody>
+        <tr><td>Banquet Hall meal</td><td class="n">+6</td><td class="n">—</td></tr>
+        <tr><td>Salt / caviar at the table</td><td class="n">+1 / +3</td><td class="n">—</td></tr>
+        <tr><td>Luxury Barracks</td><td class="n">+2</td><td class="n">—</td></tr>
+        <tr><td>Washroom</td><td class="n">+2</td><td class="n">+2</td></tr>
+        <tr><td>Nature Reserve</td><td class="n">+6</td><td class="n">+6</td></tr>
+        <tr><td>Beach chair, lit</td><td class="n">+8</td><td class="n">+8</td></tr>
+        <tr><td>Soda / espresso</td><td class="n">+4</td><td class="n">+4</td></tr>
+        <tr><td>Fresh oil (phyto / crude)</td><td class="n">—</td><td class="n">+2 / +3</td></tr>
+        <tr><td>Decor (up to)</td><td class="n">+12</td><td class="n">+12</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <h2>Utilities</h2>
+  <div class="cols">
+    <div><h3>Gas</h3><ul>
+      <li>O₂ from the SPOM goes up the shaft wall to one vent per wing, to the 8 docks and to the canister filler.</li>
+      <li>Demand is about 0.8 kg/s for dupes and 0.6 kg/s for bionics. Two electrolyzers make 1.78 kg/s.</li>
+      <li>H₂ goes to the 2 generators on F5. CO₂ collects on F6, where a mini pump with an element sensor sends it out.</li>
+      <li>Natural gas feeds the gas range.</li>
+    </ul></div>
+    <div><h3>Liquid</h3><ul>
+      <li>Clean water from outside feeds the electrolyzers, lavatories, sinks, espresso machine and soda fountain.</li>
+      <li>Polluted water goes to the sieve on F6 and comes back clean. Gunk is piped out to a refinery.</li>
+      <li>Phyto or crude oil goes to the lube station.</li>
+      <li>Cooling: an aquatuner in the steam chamber cools a radiant pipe loop through the floors of F4 to F6. The turbine above the chamber turns that heat back into power.</li>
+    </ul></div>
+    <div><h3>Power and conveyors</h3><ul>
+      <li>2 × 800 W hydrogen plus the turbine (up to 850 W). Import the rest over a heavy-watt line into F5.</li>
+      <li>Power-bank loop: the loader on F5 sends empty banks to the chargers, and charged banks go to smart storage.</li>
+      <li>Food: a conveyor runs up the west spine to the kitchen receptacle. Filter it to finished dishes only, with no raw ingredients, eggshells, polluted dirt or rot.</li>
+      <li>Re-sync the power-bank and lube-door timing every 500 cycles or so, because they drift (his note).</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Load it into Blueprint Not Included</h2>
+  <p>This JSON uses the same <code>blueprintItems</code> format that BNI's API returns (<code>/api/getblueprint/&lt;id&gt;</code>). It includes every tile, door, ladder and building in the drawing.</p>
+  <div class="row" style="margin-top:10px"><button type="button" id="copy">Copy JSON</button><span class="pill" id="copied" hidden>Copied</span><span class="pill" id="sel" hidden>Text selected. Press Ctrl+C.</span></div>
+  <textarea id="bni" readonly aria-label="Blueprint JSON">%%BNI%%</textarea>
+</section>
+
+<section class="check">
+  <h2>Check in game before you commit</h2>
+  <ul>
+    <li><b>BNI import is untested.</b> <code>SpiceGrinder</code>, <code>CraftingTable</code> and <code>Headquarters</code> (the printing pod) are the least certain IDs.</li>
+    <li><b>Gunk extractor:</b> if the game counts it as industrial machinery and the washroom stops working, swap it with the canister filler on F5.</li>
+    <li><b>Checkpoints:</b> both should face outward, with the docks between the checkpoint and the airlock. The west one is flipped (orientation 5).</li>
+    <li><b>Steam turbine:</b> it sits in the F5 floor row and forms the ceiling of the steam chamber. Confirm the game allows this placement.</li>
+    <li><b>Printing pod:</b> the game places it at world start. To use this layout, build the base around your existing pod, or plan the shaft so the west nature reserve lands on it.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>References</h2>
+  <ul>
+    <li><a href="https://www.yuque.com/u25332524/ftq4u7/ws1fao3eevlzfmmv" target="_blank" rel="noopener">大叔追云彩 · 基地布局-8复制人+6仿生人半开放基地 (Yuque)</a></li>
+    <li><a href="https://www.bilibili.com/video/BV1PAm2B9Ed4/" target="_blank" rel="noopener">大叔追云彩 · 8+6半开放式基地</a> · <a href="https://www.bilibili.com/video/BV1Q27gzkEDS/" target="_blank" rel="noopener">强制匹配仿生人电池消耗与休息时间</a> · <a href="https://www.bilibili.com/video/BV1qRevzwEML" target="_blank" rel="noopener">润滑站使用说明</a></li>
+    <li><a href="https://www.bilibili.com/video/BV1Zi2EBYE25" target="_blank" rel="noopener">拿个破笔水 · 8复制人+6仿生人混合基地二度重制版</a></li>
+    <li>BNI: <a href="https://blueprintnotincluded.org/b/6ad772ac4fc40c07504b9b75" target="_blank" rel="noopener">Base for 8 standard duplicants</a>, <a href="https://blueprintnotincluded.org/b/6aea1bb1334f952ec4d32a48" target="_blank" rel="noopener">Bionic Dupe Minibase</a></li>
+    <li>Wiki: <a href="https://oxygennotincluded.wiki.gg/wiki/Bionic_Duplicant" target="_blank" rel="noopener">Bionic Duplicant</a>, <a href="https://oxygennotincluded.wiki.gg/wiki/Room" target="_blank" rel="noopener">Rooms</a> · Bed sharing: <a href="https://forums.kleientertainment.com/forums/topic/94984-can-beds-be-used-by-multiple-dupes/" target="_blank" rel="noopener">Klei forum</a></li>
+  </ul>
+</section>
+</div>
+
+<script>
+(function(){
+  var g=document.getElementById('sched'); var out='<div></div>';
+  for(var h=0;h<24;h++) out+='<div class="h">'+h+'</div>';
+  // dupe shifts: bed 4h starting at b, then downtime 4h, rest work (from 大叔's schedule screens)
+  [['Dupes shift 1',15],['Dupes shift 2',10],['Dupes shift 3',5],['Dupes shift 4',0]].forEach(function(r){
+    out+='<div class="who">'+r[0]+' (2)</div>';
+    for(var h=0;h<24;h++){var d=(h-r[1]+24)%24;var k=d<4?'S':(d<8?'D':'W');
+      out+='<div class="c '+k+'" title="'+r[0]+' · hour '+h+'"></div>';}
+  });
+  // bionics: 3-cycle schedule, each pair rests hours 0-5 on its own cycle
+  for(var p=1;p<=3;p++){
+    out+='<div class="who">Bionics pair '+p+' · cycle '+p+'/3</div>';
+    for(var h=0;h<24;h++) out+='<div class="c '+(h<6?'D':'W')+'" title="Bionic pair '+p+', cycle '+p+' of 3 · hour '+h+'"></div>';
+  }
+  g.innerHTML=out;
+  var b=document.getElementById('copy'), t=document.getElementById('bni');
+  b.addEventListener('click',function(){
+    var done=function(){document.getElementById('copied').hidden=false;document.getElementById('sel').hidden=true;};
+    var fail=function(){t.focus();t.select();document.getElementById('sel').hidden=false;};
+    try{navigator.clipboard.writeText(t.value).then(done,fail);}catch(e){fail();}
+  });
+})();
+</script>

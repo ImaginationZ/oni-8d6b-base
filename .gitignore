@@ -1,0 +1,6 @@
+# Third-party material (videos, screenshots, Yuque doc text, 拿个破笔水's blueprint and save)
+# stays on disk only: it is not ours to republish. See references/README.md for sources.
+references/*
+!references/README.md
+__pycache__/
+cookie.txt
