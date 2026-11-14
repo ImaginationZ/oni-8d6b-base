@@ -24,9 +24,10 @@ Options:
 - **A.** Checkpoint + 4 docks inside each barracks. Probably valid now, but it hits the 64-tile room cap.
 - **B.** A separate dressing room in a wider central column.
 - **C.** Dressing room one storey below the beds.
-- **D (new, from the blueprint).** The nature reserve *is* the dressing room: checkpoint + 8 docks inside it, in front of the two bed wings. Dupes pass it going to bed and getting up, which is 拿个破笔水's step ①.
+- **D (new, from the blueprint).** The nature reserve *is* the dressing room: checkpoint + 5 docks inside it, in front of the two bed wings. Dupes pass it going to bed and getting up, which is 拿个破笔水's step ①.
+- **E.** Rocket bedrooms, now allowed (2 Spacefarer Modules, as 拿个破笔水's semi-open does). The airlock goes at the hatches.
 
-Recommended: D.
+2026-11-14: the owner set **about 5 docks** and allowed rockets. With alternate shifts per wing, A needs only 2–3 docks per wing and fits under 64 tiles. The owner left the airlock choice to me, to be proposed in the v3 plan.
 
 Also open: **Luxury Barracks needs a 4-tall ceiling.** A 4-tile storey gives 3, so we either raise one column (a notch) or accept plain Barracks the way 拿个破笔水 does.
 
