@@ -121,7 +121,7 @@
   <ul>
     <li><b>O₂ into the habitats:</b> route not drawn yet (their interior has a gas vent fed from outside).</li>
     <li><b>Clear space above a module:</b> the gym sits right on top, as in 拿个破笔水's base.</li>
-    <li><b>Wild plants:</b> pots don't count, so the reserve needs 4 plants growing on natural tiles (2 on the landing floor, 2 hanging from the roof). Keep or create those natural tiles when building; they aren't in the blueprint JSON.</li>
+    <li><b>Wild plants:</b> pots don't count, so the reserve needs 4 plants growing on natural tiles (2 on the landing floor, 2 hanging from the roof). Leave those natural tiles from the map when digging out the base; they aren't in the blueprint JSON.</li>
     <li><b>Crossing the shaft:</b> dupes step between the ladders and the pole sideways; doors sit next to ladders so nobody relies on it to get in or out.</li>
     <li><b>BNI import is untested.</b> <code>HabitatModuleMedium</code> (Spacefarer Module) is a guessed ID and isn't in BNI's database.</li>
   </ul>
