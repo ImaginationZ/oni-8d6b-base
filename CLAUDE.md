@@ -20,3 +20,8 @@ Read these before doing anything:
 - `tools/`: the generator, renderer and page builder for designs, plus the Yuque and Bilibili fetchers. See `tools/README.md`.
 - `designs/v1`, `designs/v2`: earlier attempts, now superseded (see PROGRESS for why).
 - `docs/`: requirements, findings, lessons.
+
+## Git
+- Public repo: https://github.com/ImaginationZ/oni-8p6-base (branch `main`). Commit each meaningful step (docs, decisions, designs) and push.
+- **Before every push**, scan what's tracked for credentials and private data: tokens and keys, emails other than noreply, IP addresses, home paths, machine names.
+- **Never commit third-party material:** videos, screenshots, Yuque doc text, other people's blueprints or saves. It stays under the gitignored `references/`, and the docs link to the sources. Short quotes in docs are fine.
