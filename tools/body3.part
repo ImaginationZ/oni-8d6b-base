@@ -1,0 +1,167 @@
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Oxygen Not Included · all DLC · 8 duplicants + 6 bionics · v3</div>
+  <h1>Semi-Open 8d6b Base</h1>
+  <p class="lede">Modelled on 拿个破笔水's semi-open base. Dupes and bionics wear atmo suits everywhere except inside two Spacefarer Modules, which hold the 8 comfy beds. One central shaft is the nature reserve and the way up to space, down to the bottom of the map, and out to the transit tube. Living rooms are on the left; utilities and the bedroom corridor are on the right.</p>
+  <div class="specs">
+    <span class="spec">envelope <b>46 × 26</b> tiles</span>
+    <span class="spec"><b>6</b> storeys, 4-tile grid</span>
+    <span class="spec"><b>8</b> comfy beds in <b>2</b> habitats</span>
+    <span class="spec"><b>5</b> suit docks · 8 suits</span>
+    <span class="spec"><b>1</b> communal table</span>
+    <span class="spec">printing pod inside</span>
+  </div>
+</header>
+
+<section>
+  <h2>Section drawing</h2>
+  <div class="sheet draw">%%SVG%%</div>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--tile)"></i>tile</span>
+    <span><i class="sw" style="background:var(--ins)"></i>insulated tile</span>
+    <span><i class="sw" style="background:var(--door)"></i>door</span>
+    <span><i class="sw" style="background:var(--pdoor)"></i>mechanized airlock</span>
+    <span><i class="sw" style="background:var(--pole)"></i>fire pole</span>
+    <span><i class="sw" style="background:var(--ladder)"></i>plastic ladder</span>
+    <span><i class="sw" style="background:var(--tube)"></i>transit tube</span>
+    <span><i class="sw" style="background:var(--b-key)"></i>the one communal table</span>
+  </div>
+  <p class="caption">1 square = 1 tile. Scroll sideways on a phone; hover or tap a building for its name and in-game ID. Pipes, wires, automation and conveyor rails aren't drawn. Each habitat is drawn as its 5 × 4 footprint; its 10 × 8 interior (4 comfy beds) is off-map.</p>
+</section>
+
+<section class="cols">
+  <div>
+    <h2>Dupe loop</h2>
+    <p>4 shifts of 2. Each shift sleeps first, then rests; sleep times are staggered, so at most 2 dupes are out of their suits at once.</p>
+    <ol>
+      <li>Shaft (nature reserve, +6 morale).</li>
+      <li>Into the bedroom corridor (R2): the checkpoint takes the suit; 5 docks hold the sleepers' suits.</li>
+      <li>Sleep in a habitat (4 comfy beds each).</li>
+      <li>Suit back on, back to the shaft.</li>
+      <li>Washroom (L2) across the shaft, one way right to left: lavatory, then sink.</li>
+      <li>Meal from the fridge window by the banquet door; the kitchen below feeds it by conveyor.</li>
+      <li>Banquet hall: the one communal table.</li>
+      <li>Ladder up to recreation (L4); massage clinic above it for stressed dupes.</li>
+      <li>Back into the shaft: ladder or tube up, fire pole down, to work.</li>
+    </ol>
+  </div>
+  <div>
+    <h2>Bionic loop</h2>
+    <p>3 shifts of 2, no beds: each bionic rests 6 h once every 3 cycles, staggered 6 h apart. They never take their suits off.</p>
+    <ol>
+      <li>Shaft.</li>
+      <li>Same washroom: the 2 gunk extractors are first from the door.</li>
+      <li>Through the banquet hall, up to the ledge, east door (bionics only) into the bionic room (L3).</li>
+      <li>Lube station, charged power banks (belt-fed from the 4 chargers in R1), high-pressure O₂ vent.</li>
+      <li>Ladder up to recreation, then out through the shaft.</li>
+    </ol>
+    <p>The only bionic ban is the bedroom corridor door. Everything else is shared, as in 拿个破笔水's semi-open base.</p>
+  </div>
+</section>
+
+<section class="cols">
+  <div>
+    <h2>Schedules</h2>
+    <p>From 大叔's screens for the dupes and 拿个破笔水's text for the bionics.</p>
+  </div>
+  <div class="sheet tbl">
+    <div class="sched" id="sched" aria-label="Schedule grid, 24 hours"></div>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--s-work)"></i>Work</span>
+      <span><i class="sw" style="background:var(--s-down)"></i>Downtime</span>
+      <span><i class="sw" style="background:var(--s-bed)"></i>Bedtime</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Rooms</h2>
+  <p>Sizes come from the generator's flood fill (sealed rooms, tile counts). Room-type limits are from the wiki.</p>
+  <div class="sheet tbl"><table>
+    <thead><tr><th>Room</th><th>Tiles</th><th>Contents</th></tr></thead>
+    <tbody>%%ROOMS%%</tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Doors</h2>
+  <div class="sheet tbl"><table>
+    <thead><tr><th>Door</th><th>Dupes</th><th>Bionics</th></tr></thead>
+    <tbody>
+      <tr><td>Shaft → washroom (L2)</td><td>one way, leftwards</td><td>one way, leftwards</td></tr>
+      <tr><td>Washroom → banquet hall</td><td>one way, leftwards</td><td>one way, leftwards</td></tr>
+      <tr><td>Banquet ledge → bionic room (L3)</td><td>no entry</td><td>one way, rightwards</td></tr>
+      <tr><td>Shaft → bedroom corridor (R2)</td><td>both ways</td><td>no entry</td></tr>
+      <tr><td>Roof and floor airlocks, rec → shaft, kitchen, utilities</td><td>both ways</td><td>both ways</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>What comes from 拿个破笔水, and what changed</h2>
+  <div class="sheet tbl"><table>
+    <thead><tr><th>Idea</th><th>Their semi-open base</th><th>v3</th></tr></thead>
+    <tbody>
+      <tr><td>Bedroom</td><td>2 Spacefarer Modules (4 comfy beds each) at the end of a dock corridor</td><td>Same</td></tr>
+      <tr><td>Suit docks</td><td>8</td><td>5: only the 2 sleepers' suits are ever docked</td></tr>
+      <tr><td>Central shaft</td><td>Nature reserve with fire pole, ladder and tube</td><td>Same, but 2 ladders + fire pole so both sides' doors sit next to a ladder; the tube station is on a reserve landing at the top and the tube runs along the roof, left and right</td></tr>
+      <tr><td>Washroom</td><td>2 lavatories, 2 sinks, 2 gunk extractors</td><td>2 lavatories, 1 sink, 2 gunk extractors (the room is 12 wide)</td></tr>
+      <tr><td>Kitchen and banquet hall</td><td>Vacuum-frozen food storage</td><td>Kitchen, food store and banquet hall deep-frozen (owner's decision, after 大叔)</td></tr>
+      <tr><td>Printing pod</td><td>Living area</td><td>Bionic room (L3), the only 4-tall room on the left</td></tr>
+      <tr><td>Size</td><td>45 × 27</td><td>46 × 26</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="check">
+  <h2>Check in game before you commit</h2>
+  <ul>
+    <li><b>Habitat bonuses:</b> does the bedroom count as Luxury Barracks inside a Spacefarer Module? Hover the interior.</li>
+    <li><b>O₂ into the habitats:</b> route not drawn yet (their interior has a gas vent fed from outside).</li>
+    <li><b>Clear space above a module:</b> the gym sits right on top, as in 拿个破笔水's base.</li>
+    <li><b>Wild plants in pots</b> counting for the nature reserve, and a <b>frozen banquet hall</b> keeping its decor and recreation requirements.</li>
+    <li><b>Crossing the shaft:</b> dupes step between the ladders and the pole sideways; doors sit next to ladders so nobody relies on it to get in or out.</li>
+    <li><b>BNI import is untested.</b> <code>HabitatModuleMedium</code> (Spacefarer Module) is a guessed ID and isn't in BNI's database.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Load it into Blueprint Not Included</h2>
+  <p>This JSON uses the <code>blueprintItems</code> format that BNI's API returns. It includes every tile, door, ladder and building in the drawing.</p>
+  <div class="row" style="margin-top:10px"><button type="button" id="copy">Copy JSON</button><span class="pill" id="copied" hidden>Copied</span><span class="pill" id="sel" hidden>Text selected. Press Ctrl+C.</span></div>
+  <textarea id="bni" readonly aria-label="Blueprint JSON">%%BNI%%</textarea>
+</section>
+
+<section>
+  <h2>References</h2>
+  <ul>
+    <li>拿个破笔水: <a href="https://www.yuque.com/yuqueyonghuqxidy6/bwn5hs/ylvttkl88z628mcg" target="_blank" rel="noopener">8+6 semi-open base (Yuque)</a>, <a href="https://www.bilibili.com/video/BV1R5zsB4Emw/" target="_blank" rel="noopener">video</a>, and their downloadable blueprints</li>
+    <li>大叔追云彩: <a href="https://www.bilibili.com/video/BV1PAm2B9Ed4/" target="_blank" rel="noopener">8+6 base video</a>, <a href="https://www.yuque.com/u25332524/ftq4u7/ws1fao3eevlzfmmv" target="_blank" rel="noopener">Yuque doc</a></li>
+    <li>Wiki: <a href="https://oxygennotincluded.wiki.gg/wiki/Room_Overlay" target="_blank" rel="noopener">Rooms</a>, <a href="https://oxygennotincluded.wiki.gg/wiki/Spacefarer_Module" target="_blank" rel="noopener">Spacefarer Module</a>, <a href="https://oxygennotincluded.wiki.gg/wiki/Atmo_Suit_Dock" target="_blank" rel="noopener">Atmo Suit Dock</a></li>
+  </ul>
+</section>
+</div>
+
+<script>
+(function(){
+  var g=document.getElementById('sched'); var out='<div></div>';
+  for(var h=0;h<24;h++) out+='<div class="h">'+h+'</div>';
+  [['Dupes shift 1',15],['Dupes shift 2',10],['Dupes shift 3',5],['Dupes shift 4',0]].forEach(function(r){
+    out+='<div class="who">'+r[0]+' (2)</div>';
+    for(var h=0;h<24;h++){var d=(h-r[1]+24)%24;var k=d<4?'S':(d<8?'D':'W');
+      out+='<div class="c '+k+'" title="'+r[0]+' · hour '+h+'"></div>';}
+  });
+  for(var p=1;p<=3;p++){
+    out+='<div class="who">Bionics pair '+p+' · cycle '+p+'/3</div>';
+    for(var h=0;h<24;h++) out+='<div class="c '+(h<6?'D':'W')+'" title="Bionic pair '+p+', cycle '+p+' of 3 · hour '+h+'"></div>';
+  }
+  g.innerHTML=out;
+  var b=document.getElementById('copy'), t=document.getElementById('bni');
+  b.addEventListener('click',function(){
+    var done=function(){document.getElementById('copied').hidden=false;document.getElementById('sel').hidden=true;};
+    var fail=function(){t.focus();t.select();document.getElementById('sel').hidden=false;};
+    try{navigator.clipboard.writeText(t.value).then(done,fail);}catch(e){fail();}
+  });
+})();
+</script>

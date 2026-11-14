@@ -1,4 +1,4 @@
-# v3 plan (draft for the owner's approval, 2026-11-14)
+# v3 plan (approved by the owner 2026-11-14; built, see the deviations at the end)
 
 **Basis:** 拿个破笔水's semi-open base (findings §5b) is the model, changed only where the owner's decisions differ. Other inputs: 大叔's base (findings §1–4) and the decisions in `docs/requirements.md`. Nothing gets built until the owner approves this plan.
 
@@ -65,3 +65,11 @@ Two blocks either side of a 3-wide central shaft, on the 4-tile storey grid. Tar
 1. `tools/gen3.py` (based on `gen2.py`): place the layout and validate overlaps, rooms (sizes and required buildings) and floors.
 2. Render the section page and publish it as an Artifact for the phone.
 3. Update PROGRESS and findings.
+
+## Deviations made while building (2026-11-14)
+- **46 × 26, 6 storeys** instead of about 45 × 29 with 7. The food store shares the kitchen storey, as in 拿个破笔水's base. The bedroom corridor (R2) and the bionic room (L3) are 4 tall.
+- **Shaft = ladder, fire pole, ladder.** The doors on both sides sit next to a ladder. The **tube station** stands on a reserve landing at the top (L6); the tube leaves through the roof and runs left and right along it, not up the shaft.
+- **1 sink**, not 2: the washroom is 12 wide, with 2 lavatories and 2 gunk extractors.
+- **Banquet hall is deep-frozen too**, per the owner's 2026-11-13 decision. The plan text had dropped it.
+- **Printing pod** in the bionic room (L3), the only 4-tall room on the left. New dupes climb to recreation and take a suit at the docks later.
+- **High-pressure O₂** is on the left (L5, sealed). The right block holds the freezer plant, steam chamber, power control and generators.

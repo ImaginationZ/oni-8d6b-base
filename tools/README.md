@@ -3,6 +3,7 @@
 | File | What it does |
 |---|---|
 | `gen.py` / `gen2.py` | Layout generators for v1 and v2. Each places buildings by bottom-left cell and validates overlaps, sealed rooms (flood fill, tile counts) and floor/ceiling mounting. They emit BNI-format JSON (`blueprintItems`, bottom-centre anchor) and `layout*.json` for the page. Usage: `python3 gen2.py <outdir>`. |
+| `gen3.py` / `page3.py` / `body3.part` | v3 (semi-open). `python3 -I gen3.py <outdir>` validates and writes `layout_v3.json` + `base_8d6b_v3_bni.json`; `python3 -I page3.py <outdir> <out.html>` builds the page (head.part + body3.part). |
 | `bni_database.json` | Building data from Blueprint Not Included (github.com/simonlourson/blueprintnotincluded), MIT licence, see `bni_database.LICENSE`. |
 | `render.py` | ASCII render of any BNI-format JSON (`{"data":{"blueprintItems":[...]}}`). Sizes come from `bni_database.json` (BNI's old public DB) plus an EXTRA table for newer DLC buildings. |
 | `page.py` / `page2.py` | Build the HTML design page (SVG section drawing, tables) from `layout*.json` + `template*.html`. Usage: `python3 page2.py <dir with layout_v2.json and base_8d6b_v2_bni.json> template2.html out.html`. |

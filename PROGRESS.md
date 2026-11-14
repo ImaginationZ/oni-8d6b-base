@@ -1,7 +1,7 @@
 # Progress
 
 ## Status (2026-11-14)
-The blueprint is parsed and the findings are written (§5, §5b, §7). The v3 design hasn't started. The bedroom-airlock decision is pending with the owner.
+**v3 is built and published** (semi-open, 46 × 26, habitat bedroom, 5 docks). It's waiting for the owner's review.
 
 ## Done
 - [x] Researched BNI's catalog and sample 8-dupe and bionic bases (`references/bni_samples/`).
@@ -36,7 +36,7 @@ Options:
 Also open: **Luxury Barracks needs a 4-tall ceiling.** A 4-tile storey gives 3, so we either raise one column (a notch) or accept plain Barracks the way 拿个破笔水 does.
 
 ## Next
-0. **v3 plan drafted** (`designs/v3/PLAN.md`, 2026-11-14). Waiting for the owner to approve it.
+0. **v3 built** (2026-11-14, owner approved the plan). `tools/gen3.py` → `designs/v3/` (validation OK), page `designs/v3/semi-open-8d6b-v3.html`, published at https://claude.ai/artifact/RQ68zhokfd8i67RVXzYpsR. Waiting for the owner's review. Open checks are listed on the page.
 1. ~~Parse the blueprint~~ (done 2026-11-14; `tools/blueprint_rooms.py`). Semi-open images 10, 25 and 26 reviewed; 27–37 (misc rooms, washroom, banquet, rec) are still worth a look when designing those rooms.
 2. Agree the v3 plan with the owner: dupe loop (downward via the fire pole: beds → washroom → food → banquet → recreation → nature reserve with printing pod → exit), one-way bionic wing, door permissions, the semi-open bedroom airlock, up/down access and tube room.
 3. Build v3 with `tools/gen2.py` as a starting point (it validates overlaps, rooms and floors), render the page, publish or serve it, and update this file.
