@@ -50,14 +50,58 @@ Sources: both videos, watched in full (every caption line read from burned-in su
 - **Germs:** both bases skip sinks and use 2 shine bugs or depleted-uranium tiles to sterilise. **The owner rejected this; we use sinks.**
 
 ## 5. 拿个破笔水's actual blueprint (`references/napobi_save_blueprint/napobi_8d6b.blueprint`)
-- 31 × 33 tiles, 1661 entries (Blueprints-mod JSON, `blueprintVersion` 3). There's an ASCII render in `napobi_ascii.txt` (rough: logic parts are drawn too).
-- Notable building IDs it confirms exist in-game:
-  - Bionic: `GunkEmptier`, `OilChanger`, `ElectrobankCharger`
-  - Dupe furniture and rooms: `LuxuryBed`, `MultiMinionDiningTable`, `Telephone`, `SpiceGrinder`
-  - Suits: `SuitLocker`, `SuitMarker`
-  - Kitchen: `Deepfryer`, `Smoker`, `MicrobeMusher`
-- The bionic side also has `HandSanitizer` and `MedicalCot`.
-- **Next step:** parse it properly (rooms, which buildings sit where, door access isn't stored) and compare with the Yuque screenshots.
+Parsed with `tools/blueprint_rooms.py` (2026-11-14) and checked against the base doc's screenshots (`references/napobi_yuque_base/03.jpg` overview, `04.jpg` bionic flow, `05.jpg` dupe flow).
+
+**Which base it is.** The friendly name is "（U59重制）8复制人+6仿生人混合基地": the **closed** mixed base (Yuque "8复制人+6仿生人混合基地", 31 × 33), **not the semi-open one**. Inside it everyone breathes freely, and suits come off once, at the base entrance. Coordinates below are tiles, x 0–30 left to right, y 0–32 bottom to top.
+
+**Bedrooms: 8 comfy beds in 12 × 8 tiles.**
+- Three rows of beds, each row its own room, **12 wide × 2 tall inside** (x16–27), with 1-tile floors between rows. Rows hold 3 + 3 + 2 beds; the bottom row's spare 4 tiles hold a canister filler (`GasBottler`) and a hanging cactus vase.
+- Beds sit side by side, 4 tiles each (`LuxuryBed` at x17/21/25). Each row is exactly 24 tiles.
+- The left wall is a **column of 5 stacked doors** (x15, y18–27, all "bionics: no entry"). Each row's right end is a door (x28) onto a fire-pole shaft (x29) that drops dupes to the washroom. So dupes walk in on the left and leave on the right: one-way through the beds.
+- **The rows are probably plain Barracks (+1 morale), not Luxury Barracks (+2).** The wiki says Luxury Barracks needs a ceiling of at least 4 (one column of 4 is enough), and these rows are 2 tall. The room overlay (`05.jpg`) colours them as some kind of bedroom but doesn't say which. *Unverified in-game.* 拿个破笔水 traded the morale point for compactness.
+
+**Suit docks and checkpoint: inside the nature reserve, at the base entrance.**
+- The transit-tube entrance is inside the left wall (x1–3, y20–21). Then comes the checkpoint (`SuitMarker` x5, flipped, arrow pointing left/out), then **8 docks in a row** (x6–13; the 8th is one tile higher), then the bedroom doors. Docks are on the clean side, as the wiki rule requires.
+- That whole corridor (park sign at x1 y17, wild plants on natural tiles, which blueprints don't store) is the **nature reserve**: flow step ① "进门经过自然保护区". The dressing room *is* the nature reserve, so it costs no extra room.
+- **Evidence that docks and checkpoints aren't industrial machinery.** A Nature Reserve forbids industrial machinery, and `05.jpg` shows the reserve coloured as a valid room with the checkpoint and all 8 docks inside it. This is strong but indirect: neither wiki page states it. Hovering a dock in-game would settle it.
+- Bionics are barred from the upper part of the reserve "so they don't pass the checkpoint and drop their suits" (`04.jpg`). Bionics wear suits for life, which spares suit repairs.
+
+**Dupe loop, as the door settings enforce it** (`05.jpg`):
+① tube in → checkpoint → docks (suit off) → reserve → ② a bed row (enter left, exit right) → fire pole down (x29, then x27 through a horizontal door, bionics: no entry) → ③ washroom (2 lavatories, 2 sinks set one-way) → ④ pick up food at the fridge in the kitchen strip → ⑤ banquet hall bottom-left (communal table, phone, water cooler) → ladder up through a bionics-no-entry door → ⑥ rec room (arcade, beach chair, soda fountain) → ⑦ back through the reserve, suit on, tube out.
+
+**Bionics, one-way right → left** (`04.jpg`):
+① enter on the right → ② gunk extractor + hand sanitiser room (x21–25 y12–15), chargers (4 `ElectrobankCharger`, bottom right), lube station in the middle → ③ shared rec/social area → ④ leave through the lower reserve by a left-wall door set "bionics: go left only, dupes: no entry".
+- Bionics may also enter the massage room from above.
+- Early game: cots in the bottom row, where bionics can sleep to make chips ("前期使用小床 可安排机哥进宿舍睡觉产出芯片").
+
+**Door access *is* stored.** An earlier note here said it wasn't. `Door.AccessControl.defaultPermissionByTag` holds per-tag (`Minion`, `BionicMinion`) values. 29 doors and 3 pressure doors carry settings: 11 restrict bionics or dupes, and the rest are open to both.
+
+**Other contents worth reusing:**
+- 2 electrolyzers (one high-pressure O₂ module per side), 3 hydrogen generators.
+- A steam-turbine cooling room with 2 liquid conditioners.
+- Kitchen: microbe musher → electric grill → gas range, plus deep fryer, smoker and spice grinder. Robo-arms feed it.
+- A communal table in the banquet hall, and a second one in the middle shared room (purpose unclear).
+- 2 manual generators back-feeding the grid through a transformer, a medical cot, a massage table and an apothecary.
+- 8 `SuitLocker` (an earlier count said about 9), one `SuitFabricator`, and 1 transit-tube entrance.
+
+## 5b. The semi-open version (Yuque "混合半开放基地", `references/napobi_yuque_semi_open/`)
+- **Dupes sleep in two rocket habitats**, not in the base. The room list in `26.jpg` shows "1号宿舍 / 2号宿舍" as rockets on the planetoid. Flow `10.jpg`: ① pass the reserve on the way to bed → ② take suits off inside the door → ③ sleep in the habitat → ④ get up and suit up → ⑤ washroom → ⑥ food → ⑦ eat → ⑧ recreation → ⑨ pass the reserve again → ⑩ tube or fire pole to work.
+- Docks and checkpoint sit in a "气压服存放柜走廊" (suit-dock corridor) leading to the habitat hatches (`25.jpg`).
+- The **nature reserve is the central shaft** (fire pole + tube access, 4 wild cacti on natural tiles, 114 tiles). Every dupe passes it going to work and coming back, for +6 morale ("小人上下班都经过一次").
+- So **neither reference fits 8 comfy beds into a semi-open base**: 大叔 uses cots in a rocket, and 拿个破笔水's semi-open uses rocket habitats. The owner has ruled out rocket beds, so this part of v3 is ours to design. The closed blueprint's entrance layout (reserve + docks in front of the beds) is the closest model.
 
 ## 6. Checkpoint orientation (wiki, verified)
 "A checkpoint must have an atmo suit dock built on the opposite side its arrow faces." The arrow points to the dirty or suited side, and **docks go on the clean side**. Our v1 and v2 got this backwards.
+
+## 7. Room rules that constrain the bedroom (wiki.gg Room Overlay and Luxury Barracks pages, fetched 2026-11-14)
+| Room | Size (tiles) | Key requirements | Morale |
+|---|---|---|---|
+| Barracks | 12–64 | a bed, no industrial machinery | +1 |
+| Luxury Barracks | 12–64 | comfy bed(s), no cots, a decor item, no industrial machinery, **ceiling ≥ 4** | +2 |
+| Private Bedroom | 24–64 | exactly one comfy bed, 2 decor items, ceiling ≥ 4, backwall throughout | +3 |
+| Nature Reserve | 32–120 | park sign, 4 wild plants, no industrial machinery | +6 |
+| Banquet Hall | 32–120 | communal table, decor, a recreation building, a displayed ornament, no mess table | +6 |
+
+- **Ceiling ≥ 4 means 4 clear tiles inside, and a 4-tile storey grid gives only 3.** Per the wiki tip, only one vertical line needs to reach 4, so one raised column (a notch in the slab above) is enough. Earlier wing sketches assumed Luxury Barracks without this.
+- **64-tile cap.** A 16-wide wing with 4 interior rows is exactly 64. Adding a checkpoint and 4 docks to such a wing (option A) would push it to 21 × 3 + notch, about 64: right at the limit.
+- Whether atmo suit docks and checkpoints count as industrial machinery isn't stated on the wiki. §5 has indirect evidence that they don't.

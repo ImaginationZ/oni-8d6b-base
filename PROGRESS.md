@@ -1,7 +1,7 @@
 # Progress
 
-## Status (2026-11-13)
-Research is done; the v3 design hasn't started. One decision is pending with the owner.
+## Status (2026-11-14)
+The blueprint is parsed and the findings are written (§5, §5b, §7). The v3 design hasn't started. The bedroom-airlock decision is pending with the owner.
 
 ## Done
 - [x] Researched BNI's catalog and sample 8-dupe and bionic bases (`references/bni_samples/`).
@@ -14,16 +14,24 @@ Research is done; the v3 design hasn't started. One decision is pending with the
 - [x] Got 拿个破笔水's `.blueprint` and save (from the owner's download).
 - [x] Moved the project to the owner's remote dev machine.
 
-## Pending decision (ask the owner first)
-**Where the bedroom airlock goes in the semi-open design.** 8 comfy beds fill two 16-wide wings, which leaves no room on that storey for checkpoint + 8 docks.
-- **A.** 4 docks + checkpoint inside each barracks, at the door. Compact, but only valid if suit docks aren't "industrial machinery"; otherwise the room loses its Luxury Barracks status. The owner can check in-game by hovering a dock.
-- **B.** A separate dressing room in a wider central column, about 46 tiles wide (大叔's base is 45). Safe.
-- **C.** Dressing room one storey below the beds, linked by a ladder through a horizontal door. Compact but fiddly.
+## Pending decision (asked 2026-11-14)
+**Where the bedroom airlock goes in the semi-open design.** What 拿个破笔水's files show (findings §5, §5b):
+- The `.blueprint` is their *closed* base. Its airlock is a nature reserve at the entrance: tube → checkpoint → 8 docks → reserve → 3 stacked bed rows (12 × 2 inside, 3 + 3 + 2 beds; probably plain Barracks).
+- Their *semi-open* base sleeps dupes in 2 rocket habitats, which the owner has ruled out.
+- Docks and the checkpoint sit inside a valid Nature Reserve, which is good evidence they aren't industrial machinery.
 
-Recommended: A if docks aren't industrial, otherwise B. **Also check how 拿个破笔水's blueprint solves this.** It has 8 `LuxuryBed` and about 9 `SuitLocker` in 31 × 33, so it already fits proper beds and docks compactly.
+Options:
+- **A.** Checkpoint + 4 docks inside each barracks. Probably valid now, but it hits the 64-tile room cap.
+- **B.** A separate dressing room in a wider central column.
+- **C.** Dressing room one storey below the beds.
+- **D (new, from the blueprint).** The nature reserve *is* the dressing room: checkpoint + 8 docks inside it, in front of the two bed wings. Dupes pass it going to bed and getting up, which is 拿个破笔水's step ①.
+
+Recommended: D.
+
+Also open: **Luxury Barracks needs a 4-tall ceiling.** A 4-tile storey gives 3, so we either raise one column (a notch) or accept plain Barracks the way 拿个破笔水 does.
 
 ## Next
-1. Parse `references/napobi_save_blueprint/napobi_8d6b.blueprint` properly: per-room building lists, where the beds, docks and checkpoints sit, and the flow. Review the semi-open Yuque images (`references/napobi_yuque_semi_open/`, especially 10, 11, 25–37).
+1. ~~Parse the blueprint~~ (done 2026-11-14; `tools/blueprint_rooms.py`). Semi-open images 10, 25 and 26 reviewed; 27–37 (misc rooms, washroom, banquet, rec) are still worth a look when designing those rooms.
 2. Agree the v3 plan with the owner: dupe loop (downward via the fire pole: beds → washroom → food → banquet → recreation → nature reserve with printing pod → exit), one-way bionic wing, door permissions, the semi-open bedroom airlock, up/down access and tube room.
 3. Build v3 with `tools/gen2.py` as a starting point (it validates overlaps, rooms and floors), render the page, publish or serve it, and update this file.
 

@@ -28,4 +28,5 @@
 | 2026-11-13 | **Proper comfy beds**, 8 of them, one per dupe; **no beds in a rocket** | 大叔 actually uses 8 cots inside a rocket habitat. Vanilla beds can't be shared (a dupe claims one), so we need 8. |
 | 2026-11-13 | **Semi-open design, like 大叔's** | Dupes wear suits inside most of the base and take them off only in the bedroom. Kitchen and banquet hall are deep-frozen (below −18 °C), and the bionic zone uses high-pressure O₂. |
 | 2026-11-13 | **Open: where the bedroom airlock goes** | 8 comfy beds fill two 16-wide wings, which leaves no room for checkpoint + docks on that storey. Options A/B/C are in PROGRESS.md. Waiting on the owner. |
+| 2026-11-14 | (still open) Option D added: the nature reserve doubles as the dressing room, as in 拿个破笔水's closed blueprint. Also open: Luxury Barracks needs a 4-tall ceiling, so either a notch or plain Barracks | See findings §5 and §7. |
 | 2026-11-13 | Docked rockets: **not decided** | 大叔 uses 2 rockets (gas-cargo O₂ storage and a bed habitat). Left out for now. Ask before adding. |

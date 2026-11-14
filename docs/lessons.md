@@ -18,4 +18,7 @@
   - `https://blueprintnotincluded.org/api/getblueprints?olderthan=<epoch ms>&filterName=<q>` pages through the catalog, 100 at a time. Use the `oldest` field for the next page.
   - `api/getblueprint/<id>` returns `data.blueprintItems` (id, position = bottom-centre anchor, orientation; 5 = flip H).
   - urllib's default User-Agent gets 403, so use curl or a browser UA.
+- **Blueprints-mod `.blueprint` files** store door access (`AccessControl`, per tag: 0 both, 1 go left, 2 go right, 3 neither), sink and hand-sanitiser direction, and planter contents. They do **not** store natural tiles or wild plants, so a flood fill can merge rooms that the game separates. Check the author's room-overlay screenshots.
+- **Check which base a file belongs to before drawing conclusions.** The `.blueprint` turned out to be the closed base, not the semi-open one.
+- This machine has no ffmpeg or PIL. Read the images whole; Read downscales them to about 2000 px.
 - **wiki.gg** blocks scripted `?action=raw`. WebFetch of the normal page works.
