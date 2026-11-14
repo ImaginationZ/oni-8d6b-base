@@ -36,6 +36,7 @@ Options:
 Also open: **Luxury Barracks needs a 4-tall ceiling.** A 4-tile storey gives 3, so we either raise one column (a notch) or accept plain Barracks the way 拿个破笔水 does.
 
 ## Next
+0. **v3 plan drafted** (`designs/v3/PLAN.md`, 2026-11-14). Waiting for the owner to approve it.
 1. ~~Parse the blueprint~~ (done 2026-11-14; `tools/blueprint_rooms.py`). Semi-open images 10, 25 and 26 reviewed; 27–37 (misc rooms, washroom, banquet, rec) are still worth a look when designing those rooms.
 2. Agree the v3 plan with the owner: dupe loop (downward via the fire pole: beds → washroom → food → banquet → recreation → nature reserve with printing pod → exit), one-way bionic wing, door permissions, the semi-open bedroom airlock, up/down access and tube room.
 3. Build v3 with `tools/gen2.py` as a starting point (it validates overlaps, rooms and floors), render the page, publish or serve it, and update this file.
